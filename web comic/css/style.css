@@ -1,158 +1,81 @@
- body{
-    margin: 0px;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     background-color: #111;
-    }
+}
+#colortext{
+    color: red;
+}
 *{
-    text-decoration: none;
-}
-/*.mainhead{
-    width: 100%;
-    height: 60px;
-    background:  rgb(07, 31, 79);
-
-} */
-/* .mainhead nav{ */
-    /* background:  rgb(07, 31, 79); */
-    /* font-family: 'Times New Roman', Times, serif;
-    padding-right: 15px;
-    padding-left: 15px; 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-nav{
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between;   
-}
-
-/* li{
-    list-style-type: none; 
-    display: inline-block;
-    overflow: hidden;
-}
-
-.logo{
-    font-size: 35px; 
-    font-weight: 600;
-    /*color: white; 
-} 
-/* 
-li a{
-   color: white; 
-   font-size: 18px; 
-   font-weight: bold; 
-   margin-right: 60px; 
-} */
-
-/* .mainhead nav a{
-    color: white;
-    text-decoration: none;
-    padding: 5px;
-    display: block;
-    text-align: center;
-} */
-/* .mainhead nav{
-    float: left; 
-}*/
-
-/* .navbar li:hover{
-    background-color:rgb(14, 14, 14); 
-} */ 
- 
-
-/* @font-face {
-    font-family: ;
-    src: url();
-} */
-
-
-
-
-/* new code for dropmenu */
-
-
-/* :root{
-    --menu-count: 4;
-} 
-
- .mainhead {
-    width: 100%;
-    padding: 0px 60px;
-    height: 60px;
-    background-color: rgb(07, 31, 79);
+/*CODE FOR NAVIGATION BAR*/
+.navbar {
     display: flex;
     justify-content: space-between;
-    position: fixed;
-    top: 0;
-    z-index: 100%;
+    align-items: center;
+    background-color: rgb(07, 31, 79);
+    padding: 15px;
 }
-
- .mainhead nav{
-   display: flex;
-   align-items: center; 
-   justify-content: space-between;
-   width: fit-content;
-   align-self: center;
-   cursor: pointer;
-}  
-
-.mainhead .logo{
-    height: 100%;
-    width: 40px;
-    align-self: center;
-    cursor: pointer;
-}
-
- .mainhead ul{
-    height: 100%;
-    padding: 40px;
-    list-style: none;
-    display: flex;
-    align-self: center;
-} */
-
-/* dont know what is wrong below this */
-
-
-/* .mainhead ul li a{
-    display: block;
-    padding: 0 10px;
-    height: 100%;
-    line-height: 25px;
-    font-size: 1;
-    font-family: 'Times New Roman', Times, serif;
+.navbar a {
     color: white;
-    background-color: rgb(177, 13, 13);
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all ease-in-out 100%;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #575757;
+    border-radius: 5px;
+}
+.nav-links {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-evenly;
+    width: 60%;
 }
 
-.mainhead ul li a:hover{
-   background-color: #2a2a2a;
-   color: antiquewhite;
-} */
-
-/* .mainhead ul li a ul{
-    visibility: hidden;
-    opacity: 0;
+/*CODE FOR DROP DOWN MENU*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
     display: none;
     position: absolute;
-    left: -40px;
-    transition: all ease-in-out 100ms
+    background-color: #f9f9f9;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px rgba(34, 33, 33, 0.2);
+    z-index: 1;
 }
- 
-.mainhead ul li ul li a{
-    white-space: nowrap;
-
-}
-
-ul li:hover>ul{
-    visibility: visible;
-    opacity: 1;
+.dropdown-content a {
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
     display: block;
 }
-
-.mainhead .icon{
-    align-self: center;
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.search-bar {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+.nav-icons {
     display: flex;
-} */
+    align-items: center;
+}
+.nav-icons a {
+    margin-left: 10px;
+    color: white;
+}
+
+div .text  {
+    color: #ffffff;
+}
