@@ -4,10 +4,169 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SOMAINC</title>
+    <link rel="stylesheet" href="css/style.css"> 
+</head>
 </head>
 <body>
-    <h1>hello world</h1>
-    <img src="images/imageofimage.png"
+  <!-- NAVBAR CODE-->
+  <header  class="mainhead">
+    <nav class="navbar">
+        <a href="index.html" class="logo"> <img src="images/logo.png" width="110" alt=""></a>
+        <div class="nav-links">
+            <div class="dropdown">
+                <a href="#" class="dropbtn">News & Events</a>
+                <div class="dropdown-content">
+                  <a href="#">Documents</a></li>
+                  <a href="#">Articles</a></li>
+                  <a href="#">Events</a></li>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Media</a>
+                <div class="dropdown-content">
+                  <a href="#">SomaCloud</a></li>
+                  <a href="#">Photos</a></li>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="prod.html" class="dropbtn">Products</a>
+                <div class="dropdown-content">
+                  <a href="#">SomaCloud</a></li>
+                  <a href="#">Eidolon-Frame</a></li>
+                  <a href="#">SomaLink</a></li>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="shop.html" class="dropbtn">shop</a>
+                <div class="dropdown-content">
+                  <a href="#">Eidolon-Frames</a></li>
+                  <a href="#">Parts</a></li>
+                  <a href="#">SomaLink</a></li>
+                </div>
+            </div>
+        </div>
+        <div class="nav-icons">
+            <input type="text" class="search-bar" placeholder="Search...">
+            <a href="#"><img src="images/cart.png" width="30" alt=""></a>
+            <a href="#"><img src="images/login.png" width="30" alt=""></a>
+        </div>
+    </nav>
+  </header>
+<!--CAROUSEL CODE-->
+  <div class="carcon">
+    <div class="carousel">
+        <div class="carousel-slide slide1 active">
+          <div class="voss">
+            <img src="images/ereicvoss2.png" width="1300px" alt="">
+          </div>
+          <div class="slogan">
+            <h1>Redefining the Future of Humanity</h1>
+            <p class="founded">
+              Founded in 2038 by visionary scientist Eric Voss, Soma Inc. is at the forefront of human innovation, dedicated to preserving and expanding the human experience. As the creators of the revolutionary Somacloud and advanced Eidolon-Frames, our mission is to ensure that life, memories, and individuality are never forgotten. We aim to preserve and extend the human experience while deepening our understanding of the world around us.
+            </p>
+          </div>
+          <div>
+          </div>    
+        </div>
+        <div class="carousel-slide slide2"><p>
+          The Somacloud; introduced in 2042, offers individuals nearing the end of life the ability to upload their memories and personality traits, ensuring their legacy endures for future generations digitally. By 2049, Soma Inc. perfected the highly advanced Eidolon-Frames, human-like vessels designed to integrate seamlessly with human cognition.
+          </p>
+          <p>
+          the Eidolon-Frames represent the next step in human advancement. Currently utilizing Bluetooth-based technology, these cutting-edge frames are designed to connect with a host brain via a Bluetooth receiver to prep them for concussions transfer upon their untimely end.
+          </p>
+        </div>
+        <div class="carousel-slide slide3"> 
+          <p>
+          Our latest breakthrough, the Somalink C.P.U.², began production in 2050. This state-of-the-art technology, whose name stands for Cerebral Persona Uploader (Self Multiplier), is designed to enable the safe and complete transfer of human consciousness into an Eidolon-Frame. Initially Bluetooth-based, the Eidolon-Frames are now on the cusp of full integration, unlocking unprecedented possibilities for humanity. 
+          </p>
+          <p>
+          This technology is undergoing rigorous testing through a voluntary program involving disabled veterans and active soldiers. By empowering those who have served and sacrificed for our nation, Soma Inc. is committed to protecting America’s future while honoring its past. Soma Inc. ensures that our future is built on the foundation of their strength and dedication.
+          </p>
+          <!-- <img src="images/imageofimage.png"> -->
+          <h1 class="closer">Join us as we continue to shape the future of humanity, one innovation at a time.</h1>
+        </div>
+    </div>
+    <div class="nav-dots">
+        <button id="prev">▲</button>
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+        <button id="next">▼</button>
+    </div>
+  </div>
+  <script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.dot');
+    const totalSlides = slides.length;
+
+    function updateCarousel() {
+        slides.forEach((slide, index) => {
+            slide.classList.remove('active');
+            if (index === currentIndex) {
+                slide.classList.add('active');
+            }
+        });
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[currentIndex].classList.add('active');
+    }
+
+    document.getElementById('next').addEventListener('click', () => {
+        if (currentIndex < totalSlides - 1) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+
+    document.getElementById('prev').addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+
+    dots.forEach(dot => {
+        dot.addEventListener('click', (e) => {
+            currentIndex = parseInt(e.target.dataset.index);
+            updateCarousel();
+        });
+    });
+
+    // Enable scrolling to navigate
+    let scrollTimeout;
+    window.addEventListener('wheel', (event) => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            if (event.deltaY > 0 && currentIndex < totalSlides - 1) {
+                currentIndex++;
+            } else if (event.deltaY < 0 && currentIndex > 0) {
+                currentIndex--;
+            }
+            updateCarousel();
+        }, 100);
+    });
+</script>
+<!-- <div class="text" id="colortext">
+    <h1 class="slogan">Redefining the Future of Humanity</h1>
+    <p>
+    Founded in 2038 by visionary scientist Eric Voss, Soma Inc. is at the forefront of human innovation, dedicated to preserving and expanding the human experience. As the creators of the revolutionary Somacloud and advanced Eidolon-Frames, our mission is to ensure that life, memories, and individuality are never forgotten. We aim to preserve and extend the human experience while deepening our understanding of the world around us.
+    </p>
+  
+    <p>
+    The Somacloud; introduced in 2042, offers individuals nearing the end of life the ability to upload their memories and personality traits, ensuring their legacy endures for future generations digitally. By 2049, Soma Inc. perfected the highly advanced Eidolon-Frames, human-like vessels designed to integrate seamlessly with human cognition.
+    </p>
+    <p>
+    the Eidolon-Frames represent the next step in human advancement. Currently utilizing Bluetooth-based technology, these cutting-edge frames are designed to connect with a host brain via a Bluetooth receiver to prep them for concussions transfer upon their untimely end.
+    </p>
+    <p>
+    Our latest breakthrough, the Somalink C.P.U.², began production in 2050. This state-of-the-art technology, whose name stands for Cerebral Persona Uploader (Self Multiplier), is designed to enable the safe and complete transfer of human consciousness into an Eidolon-Frame. Initially Bluetooth-based, the Eidolon-Frames are now on the cusp of full integration, unlocking unprecedented possibilities for humanity. 
+    </p>
+    <p>
+    This technology is undergoing rigorous testing through a voluntary program involving disabled veterans and active soldiers. By empowering those who have served and sacrificed for our nation, Soma Inc. is committed to protecting America’s future while honoring its past. Soma Inc. ensures that our future is built on the foundation of their strength and dedication.
+    </p>
+    <!-- <img src="images/imageofimage.png"> -->
+<!--<h1 class="closer">Join us as we continue to shape the future of humanity, one innovation at a time.</h1>
+  </div>
 </body>
 </html>
