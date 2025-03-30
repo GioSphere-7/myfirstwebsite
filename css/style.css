@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    /* background: url(../images/background.jpg); */
+    background: url(../images/background.jpg); 
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
@@ -57,7 +57,7 @@ body {
 }
 .dropdown-content a {
     color: black;
-    padding: 10px 15px;
+    padding: 10px 15px; 
     text-decoration: none;
     display: block;
 }
@@ -106,7 +106,7 @@ div .text  {
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-    color: rgb(255, 0, 0);
+    color: rgb(107, 204, 224);
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
@@ -141,7 +141,7 @@ div .text  {
     opacity: 1;
 }
 .nav-buttons {
-    display: flex;
+    display: inline;
     flex-direction: column;
     align-items: center;
     gap: 10px;
@@ -158,7 +158,7 @@ div .text  {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/*CODING FOR SLIDE 1 POSITIONING*/
+/*CODING FOR SLIDE 1 ELEMENT POSITIONING*/
 .voss {
     padding-top: 15vh;
     padding-right: 55vh;
@@ -169,6 +169,13 @@ div .text  {
 position: absolute;
 padding-left: 70vh;
 padding-right: 15vh;
-padding-top: 50vh;
+padding-top: 40vh;
 }
 
+.founded{
+ position: unset;
+padding-left: 70vh;
+padding-right: 15vh;
+padding-left: 5vh;
+padding-top: 20vh;
+}
