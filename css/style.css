@@ -1,95 +1,106 @@
-body {
-    font-family: Arial, sans-serif;
+.htmlbody { /*CODE FOR INDEX BODY*/
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
     background: url(../images/background.jpg); 
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: #111;
+    background-color: rgb(107, 204, 224);
+}
 
-}
-#colortext{
-    color: red;
-}
 *{
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-/*CODE FOR NAVIGATION BAR*/
+/* NAVBAR CODING */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     background-color: rgb(07, 31, 79);
-    padding: 15px;
+    padding: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
 }
-.navbar a {
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 22vh;
+}
+.navbar ul li {
+    position: relative;
+    display: inline-block;
+}
+.navbar ul li a {
     color: white;
     text-decoration: none;
     padding: 10px 15px;
 }
-.navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: #575757;
+.navbar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
 }
-.nav-links {
+
+.nav-icons{
     display: flex;
     flex-grow: 1;
     justify-content: space-evenly;
     width: 60%;
 }
 
-/*CODE FOR DROP DOWN MENU*/
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-.dropdown-content {
+/* NAVBAR DROPDOWN CODING */
+.dropdown-menu {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
     min-width: 150px;
-    box-shadow: 0px 8px 16px rgba(34, 33, 33, 0.2);
-    z-index: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
-.dropdown-content a {
-    color: black;
-    padding: 10px 15px; 
-    text-decoration: none;
+.dropdown-menu a {
+    padding: 10px;
     display: block;
 }
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-.dropdown:hover .dropdown-content {
+.navbar ul li:hover .dropdown-menu {
     display: block;
 }
-.search-bar {
-    padding: 5px;
-    border-radius: 5px;
-    border: none;
-}
-.nav-icons {
+
+.nav-right {
     display: flex;
     align-items: center;
-}
-.nav-icons a {
+    gap: 15px;
     margin-left: 10px;
+}
+
+.search-bar input {
+    padding: 6px;
+    border: none;
+    border-radius: 5px;
+}
+.cart, .login {
     color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 10px;
 }
 
-div .text  {
-    color: #ffffff;
-}
-
+/*CODING FOR INDEX*/
 /*CODE FOR CAROUSEL*/
-.carcon {
+.carousel-container {
     width: 100vw;
     height: 100vh;
     position: relative;
+    padding-top: 60px; /* To prevent overlap with navbar */
 }
 .carousel {
     width: 100%;
@@ -113,21 +124,46 @@ div .text  {
 .active {
     opacity: 1;
 }
-  /* DIFFERENT COLORED BACKGROUNGS???
-    .slide1 { background-color: #ff5733; }
-    .slide2 { background-color: #33a1ff; }
-    .slide3 { background-color: #33ff77; } */
 
-/*CODE FOR CAROUSEL NAVIGATION DOTS*/    
-.nav-dots {
+/* CODING FOR CAROUSEL BUTTONS  */
+.buttons {
     position: absolute;
-    padding-right: 10vh;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+    /* right: 3vh;
+    top: 40%; */
+    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
+}
+.buttons #prev{
+    right: 3vh;
+    top: 40%;
+}
+.buttons #next{
+    right: 3vh;
+    top: 70%;
+}
+.buttons button {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 50%;
+}
+.buttons button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.nav-dots {
+    position: absolute;
+    right: 4vh;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-right: 10;
 }
 .dot {
     width: 15px;
@@ -136,31 +172,14 @@ div .text  {
     border-radius: 50%;
     cursor: pointer;
     opacity: 0.5;
+    padding-right: 10;
 }
 .dot.active {
     opacity: 1;
 }
-.nav-buttons {
-    display: inline;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-.nav-buttons button {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 1.2rem;
-}
-.nav-buttons button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
 
 /*CODING FOR SLIDE 1 ELEMENT POSITIONING*/
 .voss {
-    padding-top: 15vh;
     padding-right: 55vh;
     position: relative;
 }
@@ -169,7 +188,7 @@ div .text  {
 position: absolute;
 padding-left: 70vh;
 padding-right: 15vh;
-padding-top: 40vh;
+padding-top: 25vh;
 }
 
 .founded{
@@ -177,5 +196,221 @@ padding-top: 40vh;
 padding-left: 70vh;
 padding-right: 15vh;
 padding-left: 5vh;
-padding-top: 20vh;
+padding-top: 17vh;
+}
+
+/*CODING FOR SLIDE 2 ELEMENT POSITIONING*/
+.somacloud{
+position: relative;
+padding-left: 36vw;
+padding-top: 3vw;
+}
+
+.upload{
+position: absolute;
+padding-left: 5vw;
+padding-right: 50vw;
+padding-bottom: 20vw;
+}
+
+.frame1{
+position: absolute;
+padding-left: 5vw;
+padding-right: 50vw;
+padding-top: 15vw;
+}
+
+/*CODING FOR SLIDE 3 ELEMENT POSITIONING*/
+.cpu2{
+    position: absolute;
+    padding-left: 45vw;
+}
+
+.latest{
+position: absolute;
+padding-left: 8vw;
+padding-right: 45vw;
+padding-bottom: 22vw;
+}
+
+.closer{
+position: absolute;
+padding-left: 8vw;
+padding-right: 45vw;
+padding-top: 18vw;
+}
+
+
+/* PROD.HTML CODING SECTION */
+.prodscroll{/*CODE FOR BODY*/
+    height: 100%;
+    overflow-y: auto;
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url(../images/vosschest.png);  
+    background-attachment:fixed;
+    background-size:100%;
+    background-repeat: no-repeat;
+    background-color: rgb(0, 38, 46); 
+}
+
+/*CODE FOE Eidolon-Frame SECTION*/
+.frame{
+   position:absolute;
+   padding-top: 5vw;
+   padding-left: 15vh;
+   padding-right: 15vh;
+    color: rgb(107, 204, 224) ;
+}
+#eframe{
+    padding-top: 5vh;
+    padding-left: 37vw;
+
+}
+#humevo{
+    padding-left: 23vw;
+    padding-right: 22vw;
+
+}
+#vossschem{
+    padding-top: 5vh;
+    padding-left: 22vw;
+    padding-right: 15vw;
+    padding-bottom: 5vh;
+}
+/* .para1{
+
+} */
+
+#whatframe{
+    position: absolute;
+    padding-top: 15vh;
+    padding-left: 23vw;
+    padding-right: 50vw;
+}
+#hands{
+    position:relative;
+    padding-right: 23vw;
+    padding-left: 47vw;
+}
+
+.purpose{
+    padding-top: 15vh;
+    position: absolute;
+    padding-left: 42vw;
+    padding-right: 32vw;
+    text-align: end; 
+}
+.addit{
+    position: absolute;
+    padding-top: 33vh;
+    padding-left: 42vw;
+    padding-right: 32vw;
+    text-align: end;
+
+}
+#schemdraw{
+    position: relative;
+    padding-left: 23vw;
+    padding-right: 45vw;
+}
+
+.work{ 
+    position:absolute;
+    padding-left: 22vw;
+    padding-right: 48vw;
+    padding-top: 7vh;
+
+}
+#schemhead{
+    position: relative;
+    padding-left: 45vw;
+    padding-top: 5vh;
+    padding-bottom: 2vh;
+}
+
+.best{
+    position: absolute;
+    padding-left: 23vw;
+    padding-right: 38vw;
+    padding-top: 9vh;
+
+}
+.reasons{
+    position: absolute;
+    padding-left: 25vw;
+    padding-right: 40vw;
+    padding-top: 12vh;
+}
+#how{
+    position: absolute;
+    padding-right: 30vw;
+    padding-left: 23vw;
+    padding-top: 45vh;
+
+}
+
+/*CODE FOE SomaCloud SECTION*/
+.cloud{
+    position: absolute;
+    padding-top: 35vw;
+    padding-left: 24vw;
+    padding-right: 30vw;
+    color:rgb(107, 204, 224) ;
+}
+#sctitle{
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    padding-left: 14vw;
+}
+
+/*CODE FOR EVENT.HTML*/
+.events{/*CODE FOR BODY*/
+    height: 100%;
+    overflow-y: auto;
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url(../images/vosschest.png);  
+    background-attachment:fixed;
+    background-size:100%;
+    background-repeat: no-repeat;
+    background-color: rgb(0, 38, 46); 
+}
+
+#page1{
+position: absolute;
+padding-top: 8vh;
+padding-left: 37vw;
+padding-bottom: 5vh;
+
+}
+
+.page2{
+    position: relative;
+    padding-left: 37vw;
+    padding-top: 100vh;
+}
+
+.shop{/*CODE FOR BODY*/
+    height: 100%;
+    overflow-y: auto;
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    /*background: url(../images/vosschest.png);*/  
+    background-attachment:fixed;
+    background-size:100%;
+    background-repeat: no-repeat;
+    background-color: rgb(0, 38, 46); 
+}
+
+.loading{
+    position: absolute;
+    padding-left: 24vw;
+    padding-top: 15vh;
 }
