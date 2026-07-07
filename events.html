@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SOMAINC</title>
-    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/search.js" defer></script>
+    <script src="js/account.js" defer></script>
 </head>
 
 <body class="events">
@@ -45,11 +47,14 @@
     <div class="filler"></div>
     <div class="filler"></div>
     <div class="nav-right">
-        <div class="search-bar">
-            <input type="text" placeholder="Search...">
-        </div>
+        <form class="search-bar" role="search" data-site-search>
+            <label class="sr-only" for="site-search">Search the site</label>
+            <input id="site-search" type="search" name="q" placeholder="Search..." autocomplete="off">
+            <button type="submit" aria-label="Search">&#128269;</button>
+            <span class="search-status" data-search-status role="status" aria-live="polite"></span>
+        </form>
         <a href="shop.html"><img src="images/cart.png" width="30" alt=""></a>
-        <a href="shop.html"><img src="images/login.png" width="30" alt=""></a>
+        <a href="account.html" class="account-link" data-account-link aria-label="Account"><img src="images/login.png" width="30" alt=""></a>
     </div>
     <div class="filler"></div>
 </nav>

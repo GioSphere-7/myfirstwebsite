@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOMAINC</title>
-    <link rel="stylesheet" href="css/style.css"> 
+    <title>Shop | SOMAINC</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/search.js" defer></script>
+    <script src="js/account.js" defer></script>
 </head>
 
 <body class="shop">
@@ -45,16 +47,69 @@
     <div class="filler"></div>
     <div class="filler"></div>
     <div class="nav-right">
-        <div class="search-bar">
-            <input type="text" placeholder="Search...">
-        </div>
+        <form class="search-bar" role="search" data-site-search>
+            <label class="sr-only" for="site-search">Search the site</label>
+            <input id="site-search" type="search" name="q" placeholder="Search..." autocomplete="off">
+            <button type="submit" aria-label="Search">&#128269;</button>
+            <span class="search-status" data-search-status role="status" aria-live="polite"></span>
+        </form>
         <a href="shop.html"><img src="images/cart.png" width="30" alt=""></a>
-        <a href="shop.html"><img src="images/login.png" width="30" alt=""></a>
+        <a href="account.html" class="account-link" data-account-link aria-label="Account"><img src="images/login.png" width="30" alt=""></a>
     </div>
     <div class="filler"></div>
 </nav>
 </header>
 </nav>
-  <img class="loading" src="images/Somaloading.png" width="750px" alt="">
+  <main class="shop-content">
+    <section class="shop-hero">
+      <p class="eyebrow">Soma Inc. collection</p>
+      <h1>Technology for the life ahead.</h1>
+      <p>Explore concept products and save demo orders to your Soma ID purchase history.</p>
+      <p class="demo-notice"><strong>Demo store:</strong> These buttons save a sample order only. No payment is collected.</p>
+    </section>
+
+    <p class="shop-message" data-shop-message role="status" aria-live="polite"></p>
+
+    <section class="product-grid" aria-label="Products">
+      <article class="product-card">
+        <div class="product-image-wrap">
+          <img src="images/ereicvoss2.png" alt="Eidolon-Frame concept">
+        </div>
+        <p class="product-type">Synthetic vessel</p>
+        <h2>Eidolon-Frame Reservation</h2>
+        <p>A priority reservation for Soma Inc.'s advanced synthetic human platform.</p>
+        <div class="product-action-row">
+          <strong>$4,999</strong>
+          <button class="primary-action" type="button" data-purchase data-product="Eidolon-Frame Reservation" data-price="4999">Save demo order</button>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrap">
+          <img src="images/somacloud.png" alt="SomaCloud concept">
+        </div>
+        <p class="product-type">Digital preservation</p>
+        <h2>SomaCloud Legacy Plan</h2>
+        <p>A concept plan for preserving memories, personality, and personal history.</p>
+        <div class="product-action-row">
+          <strong>$299</strong>
+          <button class="primary-action" type="button" data-purchase data-product="SomaCloud Legacy Plan" data-price="299">Save demo order</button>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrap">
+          <img src="images/CPU2.gif" alt="Somalink CPU squared concept">
+        </div>
+        <p class="product-type">Neural technology</p>
+        <h2>Somalink C.P.U.² Early Access</h2>
+        <p>Early-access enrollment for Soma Inc.'s consciousness-transfer research program.</p>
+        <div class="product-action-row">
+          <strong>$1,299</strong>
+          <button class="primary-action" type="button" data-purchase data-product="Somalink C.P.U.² Early Access" data-price="1299">Save demo order</button>
+        </div>
+      </article>
+    </section>
+  </main>
 </body>
 </html>
