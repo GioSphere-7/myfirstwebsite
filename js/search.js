@@ -10,6 +10,16 @@ const siteSearchEntries = [
     keywords: ["eidolon", "eidolon frame", "eidolon frames", "frame", "synthetic body", "titanium", "survival"]
   },
   {
+    label: "Eidolon-Frame Models",
+    url: "shop.html#eidolon-models",
+    keywords: ["eidolon models", "frame models", "economic frame", "economy frame", "budget frame", "luxury frame", "aurelian", "access model", "core model"]
+  },
+  {
+    label: "Eidolon-Frame Parts",
+    url: "shop.html#eidolon-parts",
+    keywords: ["parts", "eidolon parts", "frame parts", "replacement parts", "optic sensor", "hand actuator", "neural sync receiver", "power spine", "dermal sensor", "mobility calibration"]
+  },
+  {
     label: "SomaCloud",
     url: "prod.html#sctitle",
     keywords: ["somacloud", "soma cloud", "cloud", "memories", "memory", "personality", "digital repository", "legacy"]

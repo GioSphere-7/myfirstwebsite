@@ -1,9 +1,9 @@
 .htmlbody { /*CODE FOR INDEX BODY*/
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: "Exo 2", "Segoe UI", Arial, sans-serif;
     overflow: hidden;
-    background: url(../images/background.jpg); 
+    background: url(../images/background.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
@@ -169,6 +169,54 @@
 }
 
 /*CODING FOR INDEX*/
+.htmlbody .navbar,
+.htmlbody .carousel-slide,
+.htmlbody .buttons button,
+.htmlbody .search-bar input,
+.htmlbody .search-bar button {
+    font-family: "Exo 2", "Segoe UI", Arial, sans-serif;
+}
+
+.htmlbody .navbar ul li a {
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.htmlbody .slogan h1 {
+    font-family: "Orbitron", "Exo 2", Arial, sans-serif;
+    font-size: clamp(2.2rem, 4.8vw, 5rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #eefcff;
+    text-shadow:
+        0 0 12px rgba(107, 204, 224, 0.65),
+        0 0 34px rgba(18, 88, 151, 0.55);
+}
+
+.htmlbody .founded,
+.htmlbody .upload,
+.htmlbody .frame1,
+.htmlbody .latest,
+.htmlbody .closer {
+    font-family: "Exo 2", "Segoe UI", Arial, sans-serif;
+    font-weight: 500;
+    line-height: 1.45;
+    letter-spacing: 0.02em;
+    color: #bdeef7;
+    text-shadow: 0 0 16px rgba(3, 15, 32, 0.72);
+}
+
+.htmlbody .founded::first-line,
+.htmlbody .upload::first-line,
+.htmlbody .latest p::first-line {
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 0.045em;
+}
+
 /*CODE FOR CAROUSEL*/
 .carousel-container {
     width: 100vw;
@@ -729,6 +777,7 @@ padding-bottom: 5vh;
 
 .history-card {
     min-height: 280px;
+    scroll-margin-top: 120px;
 }
 
 .text-link {
@@ -776,6 +825,30 @@ padding-bottom: 5vh;
     padding: 0 2px;
 }
 
+.product-section {
+    margin-top: 54px;
+    scroll-margin-top: 115px;
+}
+
+.section-heading {
+    max-width: 760px;
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    margin: 6px 0 10px;
+    color: white;
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+}
+
+.section-heading p:not(.eyebrow) {
+    color: #a9dce7;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
 .product-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -787,6 +860,14 @@ padding-bottom: 5vh;
     flex-direction: column;
     overflow: hidden;
     padding: 18px;
+}
+
+.product-card.is-luxury {
+    border-color: rgba(255, 228, 158, 0.45);
+    background:
+        linear-gradient(145deg, rgba(65, 45, 13, 0.28), rgba(4, 25, 38, 0.86)),
+        rgba(4, 25, 38, 0.86);
+    box-shadow: 0 20px 55px rgba(255, 199, 89, 0.12);
 }
 
 .product-image-wrap {
@@ -812,6 +893,19 @@ padding-bottom: 5vh;
 .product-card > p:not(.product-type) {
     flex: 1;
     margin: 6px 0 24px;
+}
+
+.product-spec-list {
+    display: grid;
+    gap: 7px;
+    margin: 0 0 24px 18px;
+    color: #bdeef7;
+    font-size: 0.86rem;
+    line-height: 1.35;
+}
+
+.product-spec-list li::marker {
+    color: #62d5ea;
 }
 
 .product-action-row strong {

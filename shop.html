@@ -37,9 +37,9 @@
         <li>
             <a href="shop.html">Shop</a>
             <div class="dropdown-menu">
-                <a href="shop.html">Eidolon-Frames</a>
-                <a href="shop.html">Parts</a>
-                <!-- <a href="#">SomaLink</a> -->
+                <a href="shop.html#eidolon-models">Eidolon-Frames</a>
+                <a href="shop.html#eidolon-parts">Parts</a>
+                <a href="shop.html#soma-services">Soma Services</a>
             </div>
         </li>
     </ul>
@@ -53,62 +53,222 @@
             <button type="submit" aria-label="Search">&#128269;</button>
             <span class="search-status" data-search-status role="status" aria-live="polite"></span>
         </form>
-        <a href="shop.html"><img src="images/cart.png" width="30" alt=""></a>
+        <a href="account.html#purchase-history" aria-label="View purchase history"><img src="images/cart.png" width="30" alt=""></a>
         <a href="account.html" class="account-link" data-account-link aria-label="Account"><img src="images/login.png" width="30" alt=""></a>
     </div>
     <div class="filler"></div>
-</nav>
-</header>
-</nav>
+  </nav>
+  </header>
+
   <main class="shop-content">
     <section class="shop-hero">
       <p class="eyebrow">Soma Inc. collection</p>
       <h1>Technology for the life ahead.</h1>
-      <p>Explore concept products and save demo orders to your Soma ID purchase history.</p>
+      <p>Explore Eidolon-Frame models, replacement parts, and advanced neural services. Save demo orders to your Soma ID purchase history.</p>
       <p class="demo-notice"><strong>Demo store:</strong> These buttons save a sample order only. No payment is collected.</p>
     </section>
 
     <p class="shop-message" data-shop-message role="status" aria-live="polite"></p>
 
-    <section class="product-grid" aria-label="Products">
-      <article class="product-card">
-        <div class="product-image-wrap">
-          <img src="images/ereicvoss2.png" alt="Eidolon-Frame concept">
-        </div>
-        <p class="product-type">Synthetic vessel</p>
-        <h2>Eidolon-Frame Reservation</h2>
-        <p>A priority reservation for Soma Inc.'s advanced synthetic human platform.</p>
-        <div class="product-action-row">
-          <strong>$4,999</strong>
-          <button class="primary-action" type="button" data-purchase data-product="Eidolon-Frame Reservation" data-price="4999">Save demo order</button>
-        </div>
-      </article>
+    <section class="product-section" id="eidolon-models">
+      <div class="section-heading">
+        <p class="eyebrow">Eidolon-Frame models</p>
+        <h2>Choose the frame that fits your next life.</h2>
+        <p>From practical continuity shells to executive-grade bodies, each model saves as a demo order under your account.</p>
+      </div>
 
-      <article class="product-card">
-        <div class="product-image-wrap">
-          <img src="images/somacloud.png" alt="SomaCloud concept">
-        </div>
-        <p class="product-type">Digital preservation</p>
-        <h2>SomaCloud Legacy Plan</h2>
-        <p>A concept plan for preserving memories, personality, and personal history.</p>
-        <div class="product-action-row">
-          <strong>$299</strong>
-          <button class="primary-action" type="button" data-purchase data-product="SomaCloud Legacy Plan" data-price="299">Save demo order</button>
-        </div>
-      </article>
+      <div class="product-grid" aria-label="Eidolon-Frame models">
+        <article class="product-card">
+          <div class="product-image-wrap">
+            <img src="images/ereicvoss2.png" alt="Eidolon-Frame Core model concept">
+          </div>
+          <p class="product-type">Synthetic vessel</p>
+          <h2>Eidolon-Frame Core</h2>
+          <p>A balanced reservation model for full-body continuity, designed as Soma Inc.'s standard synthetic platform.</p>
+          <ul class="product-spec-list">
+            <li>Adaptive neural receiver bay</li>
+            <li>Baseline synthetic mobility suite</li>
+            <li>Service-ready modular shell</li>
+          </ul>
+          <div class="product-action-row">
+            <strong>$4,999</strong>
+            <button class="primary-action" type="button" data-purchase data-product="Eidolon-Frame Core" data-price="4999">Save demo order</button>
+          </div>
+        </article>
 
-      <article class="product-card">
-        <div class="product-image-wrap">
-          <img src="images/CPU2.gif" alt="Somalink CPU squared concept">
-        </div>
-        <p class="product-type">Neural technology</p>
-        <h2>Somalink C.P.U.² Early Access</h2>
-        <p>Early-access enrollment for Soma Inc.'s consciousness-transfer research program.</p>
-        <div class="product-action-row">
-          <strong>$1,299</strong>
-          <button class="primary-action" type="button" data-purchase data-product="Somalink C.P.U.² Early Access" data-price="1299">Save demo order</button>
-        </div>
-      </article>
+        <article class="product-card">
+          <div class="product-image-wrap">
+            <img src="images/Eric-Voss-schematics.png" alt="Eidolon-Frame Access model schematic">
+          </div>
+          <p class="product-type">Economic model</p>
+          <h2>Eidolon-Frame Access</h2>
+          <p>A more economic entry-frame for practical restoration, built with a lightweight chassis and simplified comfort package.</p>
+          <ul class="product-spec-list">
+            <li>Compact carbon-alloy skeleton</li>
+            <li>Essential motor-response tuning</li>
+            <li>Upgradeable skin and sensor layers</li>
+          </ul>
+          <div class="product-action-row">
+            <strong>$2,499</strong>
+            <button class="primary-action" type="button" data-purchase data-product="Eidolon-Frame Access" data-price="2499">Save demo order</button>
+          </div>
+        </article>
+
+        <article class="product-card is-luxury">
+          <div class="product-image-wrap">
+            <img src="images/vosschest.png" alt="Eidolon-Frame Aurelian luxury model">
+          </div>
+          <p class="product-type">Luxury model</p>
+          <h2>Eidolon-Frame Aurelian</h2>
+          <p>A premium executive frame with a refined biometric finish, quiet-motion actuation, and concierge calibration.</p>
+          <ul class="product-spec-list">
+            <li>Platinum-grade tactile sensor mesh</li>
+            <li>Silent servo articulation package</li>
+            <li>Priority SomaCloud sync support</li>
+          </ul>
+          <div class="product-action-row">
+            <strong>$12,999</strong>
+            <button class="primary-action" type="button" data-purchase data-product="Eidolon-Frame Aurelian" data-price="12999">Save demo order</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="product-section" id="eidolon-parts">
+      <div class="section-heading">
+        <p class="eyebrow">Eidolon-Frame parts</p>
+        <h2>Replacement modules and performance upgrades.</h2>
+        <p>Service your frame with modular Soma Inc. components built for repair, calibration, and personalization.</p>
+      </div>
+
+      <div class="product-grid product-grid-compact" aria-label="Eidolon-Frame parts">
+        <article class="product-card">
+          <div class="product-image-wrap">
+            <img src="images/hand-schematic.jpg" alt="Synthetic hand actuator schematic">
+          </div>
+          <p class="product-type">Frame part</p>
+          <h2>Hand Actuator Kit</h2>
+          <p>Precision tendon motors and palm stabilizers for restoring grip response.</p>
+          <div class="product-action-row">
+            <strong>$349</strong>
+            <button class="primary-action" type="button" data-purchase data-product="Hand Actuator Kit" data-price="349">Save demo order</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image-wrap">
+            <img src="images/schematic-head.png" alt="Optic sensor calibration module">
+          </div>
+          <p class="product-type">Frame part</p>
+          <h2>Optic Sensor Pair</h2>
+          <p>Dual high-fidelity optic modules with low-light mapping and facial-recognition tuning.</p>
+          <div class="product-action-row">
+            <strong>$589</strong>
+            <button class="primary-action" type="button" data-purchase data-product="Optic Sensor Pair" data-price="589">Save demo order</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image-wrap">
+            <img src="images/CPU2loop.gif" alt="Neural sync receiver module">
+          </div>
+          <p class="product-type">Frame part</p>
+          <h2>Neural Sync Receiver</h2>
+          <p>Receiver module for Somalink pairing, diagnostics, and consciousness-transfer preparation.</p>
+          <div class="product-action-row">
+            <strong>$899</strong>
+            <button class="primary-action" type="button" data-purchase data-product="Neural Sync Receiver" data-price="899">Save demo order</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image-wrap">
+            <img src="images/Eric-Voss-schematics.png" alt="Dermal sensor mesh schematic">
+          </div>
+          <p class="product-type">Frame part</p>
+          <h2>Dermal Sensor Mesh</h2>
+          <p>Touch-response layer for temperature, pressure, and proximity feedback.</p>
+          <div class="product-action-row">
+            <strong>$749</strong>
+            <button class="primary-action" type="button" data-purchase data-product="Dermal Sensor Mesh" data-price="749">Save demo order</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image-wrap">
+            <img src="images/vosschest.png" alt="Eidolon power spine core">
+          </div>
+          <p class="product-type">Frame part</p>
+          <h2>Power Spine Core</h2>
+          <p>Compact energy-management spine for extended runtime and safer frame shutdown cycles.</p>
+          <div class="product-action-row">
+            <strong>$1,149</strong>
+            <button class="primary-action" type="button" data-purchase data-product="Power Spine Core" data-price="1149">Save demo order</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image-wrap">
+            <img src="images/ericvoss.png" alt="Synthetic mobility calibration service">
+          </div>
+          <p class="product-type">Service part</p>
+          <h2>Mobility Calibration Pack</h2>
+          <p>Field-ready gait, balance, and reflex tuning for newly repaired Eidolon-Frames.</p>
+          <div class="product-action-row">
+            <strong>$229</strong>
+            <button class="primary-action" type="button" data-purchase data-product="Mobility Calibration Pack" data-price="229">Save demo order</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="product-section" id="soma-services">
+      <div class="section-heading">
+        <p class="eyebrow">Soma services</p>
+        <h2>Preservation and transfer technology.</h2>
+        <p>Support your frame with digital preservation and Somalink research enrollment.</p>
+      </div>
+
+      <div class="product-grid" aria-label="Soma services">
+        <article class="product-card">
+          <div class="product-image-wrap">
+            <img src="images/somacloud.png" alt="SomaCloud concept">
+          </div>
+          <p class="product-type">Digital preservation</p>
+          <h2>SomaCloud Legacy Plan</h2>
+          <p>A concept plan for preserving memories, personality, and personal history.</p>
+          <div class="product-action-row">
+            <strong>$299</strong>
+            <button class="primary-action" type="button" data-purchase data-product="SomaCloud Legacy Plan" data-price="299">Save demo order</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image-wrap">
+            <img src="images/CPU2.gif" alt="Somalink CPU2 concept">
+          </div>
+          <p class="product-type">Neural technology</p>
+          <h2>Somalink C.P.U.<sup>2</sup> Early Access</h2>
+          <p>Early-access enrollment for Soma Inc.'s consciousness-transfer research program.</p>
+          <div class="product-action-row">
+            <strong>$1,299</strong>
+            <button class="primary-action" type="button" data-purchase data-product="Somalink C.P.U.2 Early Access" data-price="1299">Save demo order</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image-wrap">
+            <img src="images/imageofimage.png" alt="Soma diagnostic scan concept">
+          </div>
+          <p class="product-type">Account service</p>
+          <h2>Continuity Diagnostic Scan</h2>
+          <p>A simulated wellness scan that checks sync readiness between your Soma ID, SomaCloud, and frame profile.</p>
+          <div class="product-action-row">
+            <strong>$149</strong>
+            <button class="primary-action" type="button" data-purchase data-product="Continuity Diagnostic Scan" data-price="149">Save demo order</button>
+          </div>
+        </article>
+      </div>
     </section>
   </main>
 </body>
