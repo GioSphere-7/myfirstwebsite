@@ -29,6 +29,32 @@
     }
   }
 
+  function removePurchase(purchaseId) {
+    const currentUser = getCurrentUser();
+    const historyMessage = document.querySelector("[data-history-message]");
+
+    if (!currentUser) {
+      return;
+    }
+
+    const purchases = currentUser.purchases || [];
+    const removedPurchase = purchases.find((purchase) => (purchase.id || purchase.orderId) === purchaseId);
+
+    if (!removedPurchase) {
+      setMessage(historyMessage, "That demo order could not be found.", "error");
+      return;
+    }
+
+    currentUser.purchases = purchases.filter((purchase) => (purchase.id || purchase.orderId) !== purchaseId);
+    saveCurrentUser(currentUser);
+    renderPurchaseHistory(currentUser);
+    setMessage(
+      historyMessage,
+      `${removedPurchase.product} was removed from your purchase history.`,
+      "success"
+    );
+  }
+
   async function hashPassword(password) {
     const encodedPassword = new TextEncoder().encode(password);
     const hashBuffer = await crypto.subtle.digest("SHA-256", encodedPassword);
@@ -89,16 +115,26 @@
       const details = document.createElement("div");
       const productName = document.createElement("h3");
       const orderDetails = document.createElement("p");
+      const actions = document.createElement("div");
       const total = document.createElement("strong");
+      const deleteButton = document.createElement("button");
       const date = new Date(purchase.date);
+      const purchaseId = purchase.id || purchase.orderId;
 
       item.className = "history-item";
+      actions.className = "history-actions";
       productName.textContent = purchase.product;
       orderDetails.textContent = `${purchase.orderId} · ${date.toLocaleDateString()} · ${purchase.status}`;
       total.textContent = `$${Number(purchase.total).toLocaleString()}`;
+      deleteButton.className = "danger-action";
+      deleteButton.type = "button";
+      deleteButton.textContent = "Remove";
+      deleteButton.setAttribute("aria-label", `Remove ${purchase.product} from purchase history`);
+      deleteButton.addEventListener("click", () => removePurchase(purchaseId));
 
       details.append(productName, orderDetails);
-      item.append(details, total);
+      actions.append(total, deleteButton);
+      item.append(details, actions);
       history.appendChild(item);
     });
   }
@@ -126,6 +162,31 @@
     welcomeName.textContent = currentUser.name;
     accountEmail.textContent = currentUser.email;
     notificationCheckbox.checked = Boolean(currentUser.emailNotifications);
+  }
+
+  function renderPurchaseHistoryPage() {
+    const historyPage = document.querySelector("[data-history-page]");
+
+    if (!historyPage) {
+      return;
+    }
+
+    const guestView = document.querySelector("[data-history-guest-view]");
+    const memberView = document.querySelector("[data-history-member-view]");
+    const currentUser = getCurrentUser();
+
+    guestView.hidden = Boolean(currentUser);
+    memberView.hidden = !currentUser;
+
+    if (!currentUser) {
+      return;
+    }
+
+    const historyName = document.querySelector("[data-history-name]");
+    const historyEmail = document.querySelector("[data-history-email]");
+
+    historyName.textContent = currentUser.name;
+    historyEmail.textContent = currentUser.email;
     renderPurchaseHistory(currentUser);
   }
 
@@ -216,6 +277,7 @@
       localStorage.removeItem(SESSION_KEY);
       updateAccountLinks();
       renderAccountPage();
+      renderPurchaseHistoryPage();
     });
   }
 
@@ -275,4 +337,5 @@
 
   updateAccountLinks();
   renderAccountPage();
+  renderPurchaseHistoryPage();
 })();

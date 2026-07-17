@@ -20,6 +20,21 @@ const siteSearchEntries = [
     keywords: ["parts", "eidolon parts", "frame parts", "replacement parts", "optic sensor", "hand actuator", "neural sync receiver", "power spine", "dermal sensor", "mobility calibration"]
   },
   {
+    label: "Eidolon-Frame Accessories",
+    url: "shop.html#eidolon-accessories",
+    keywords: ["accessories", "eidolon accessories", "frame accessories", "arm extender", "arm extenders", "leg extender", "leg extenders", "torso extender", "torso extension"]
+  },
+  {
+    label: "Eidolon-Frame Repairs",
+    url: "shop.html#eidolon-repairs",
+    keywords: ["repairs", "repair parts", "hydraulics", "replacement hydraulics", "arm hydraulics", "leg hydraulics", "hydraulic diagnostic", "damaged frame"]
+  },
+  {
+    label: "Eidolon-Frame Upgrades",
+    url: "shop.html#eidolon-upgrades",
+    keywords: ["upgrades", "frame upgrades", "storage", "more storage", "backup battery", "extended backup battery", "emergency backup", "overclock", "overclocking", "chip slots", "eidolon chip", "custom frame", "customizable", "bespoke"]
+  },
+  {
     label: "SomaCloud",
     url: "prod.html#sctitle",
     keywords: ["somacloud", "soma cloud", "cloud", "memories", "memory", "personality", "digital repository", "legacy"]
@@ -37,7 +52,12 @@ const siteSearchEntries = [
   {
     label: "Account",
     url: "account.html",
-    keywords: ["account", "login", "log in", "sign in", "signup", "sign up", "email notifications", "purchase history", "order history", "profile"]
+    keywords: ["account", "login", "log in", "sign in", "signup", "sign up", "email notifications", "profile", "soma id"]
+  },
+  {
+    label: "Purchase History",
+    url: "purchase-history.html",
+    keywords: ["purchase history", "order history", "orders", "saved orders", "cart history", "remove order", "delete order", "purchase archive"]
   },
   {
     label: "Home",

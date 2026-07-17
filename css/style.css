@@ -705,7 +705,8 @@ padding-bottom: 5vh;
 }
 
 .primary-action,
-.secondary-action {
+.secondary-action,
+.danger-action {
     border: 0;
     border-radius: 8px;
     padding: 11px 16px;
@@ -732,6 +733,27 @@ padding-bottom: 5vh;
     border: 1px solid rgba(137, 220, 235, 0.38);
     color: #d9f8ff;
     background: transparent;
+}
+
+.link-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 18px;
+    text-decoration: none;
+}
+
+.danger-action {
+    border: 1px solid rgba(255, 151, 151, 0.38);
+    color: #ffc5c3;
+    background: rgba(80, 11, 20, 0.25);
+}
+
+.danger-action:hover,
+.danger-action:focus-visible {
+    border-color: rgba(255, 172, 169, 0.72);
+    color: white;
+    background: rgba(116, 18, 31, 0.45);
 }
 
 .form-message,
@@ -780,6 +802,10 @@ padding-bottom: 5vh;
     scroll-margin-top: 120px;
 }
 
+.history-message {
+    margin: 12px 0 0;
+}
+
 .text-link {
     flex: 0 0 auto;
     color: #62d5ea;
@@ -818,6 +844,12 @@ padding-bottom: 5vh;
 
 .history-item strong {
     color: #71efb8;
+}
+
+.history-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .shop-message {
@@ -868,6 +900,20 @@ padding-bottom: 5vh;
         linear-gradient(145deg, rgba(65, 45, 13, 0.28), rgba(4, 25, 38, 0.86)),
         rgba(4, 25, 38, 0.86);
     box-shadow: 0 20px 55px rgba(255, 199, 89, 0.12);
+}
+
+.product-card.is-bespoke {
+    border-color: rgba(204, 158, 255, 0.5);
+    background:
+        radial-gradient(circle at 80% 10%, rgba(171, 92, 255, 0.22), transparent 36%),
+        linear-gradient(145deg, rgba(46, 22, 70, 0.42), rgba(4, 25, 38, 0.9));
+    box-shadow:
+        0 24px 60px rgba(132, 78, 255, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.product-card.is-bespoke .product-type {
+    color: #d7b8ff;
 }
 
 .product-image-wrap {
@@ -942,5 +988,15 @@ padding-bottom: 5vh;
     .product-action-row {
         align-items: flex-start;
         flex-direction: column;
+    }
+
+    .history-item {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .history-actions {
+        width: 100%;
+        justify-content: space-between;
     }
 }

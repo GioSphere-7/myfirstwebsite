@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase History | SOMAINC</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/search.js" defer></script>
+    <script src="js/account.js" defer></script>
+</head>
+<body class="account-page">
+  <header>
+    <nav class="navbar">
+      <div class="filler"></div>
+      <a href="index.html" class="logo"><img src="images/logo.png" width="110" alt="Soma Inc. home"></a>
+      <ul>
+        <div class="filler"></div>
+        <li><a href="events.html">News & Events</a></li>
+        <li>
+          <a href="prod.html">Products</a>
+          <div class="dropdown-menu">
+            <a href="prod.html#eframe">Eidolon-Frame</a>
+            <a href="prod.html#sctitle">SomaCloud</a>
+          </div>
+        </li>
+        <li>
+          <a href="shop.html">Shop</a>
+          <div class="dropdown-menu">
+            <a href="shop.html#eidolon-models">Eidolon-Frames</a>
+            <a href="shop.html#eidolon-parts">Parts</a>
+            <a href="shop.html#eidolon-accessories">Accessories</a>
+            <a href="shop.html#eidolon-repairs">Repairs</a>
+            <a href="shop.html#eidolon-upgrades">Upgrades</a>
+          </div>
+        </li>
+      </ul>
+      <div class="filler"></div>
+      <div class="nav-right">
+        <form class="search-bar" role="search" data-site-search>
+          <label class="sr-only" for="site-search">Search the site</label>
+          <input id="site-search" type="search" name="q" placeholder="Search..." autocomplete="off">
+          <button type="submit" aria-label="Search">&#128269;</button>
+          <span class="search-status" data-search-status role="status" aria-live="polite"></span>
+        </form>
+        <a href="purchase-history.html" aria-label="View purchase history"><img src="images/cart.png" width="30" alt=""></a>
+        <a href="account.html" class="account-link" data-account-link aria-label="Account"><img src="images/login.png" width="30" alt=""></a>
+      </div>
+      <div class="filler"></div>
+    </nav>
+  </header>
+
+  <main class="account-shell" data-history-page>
+    <section class="account-intro">
+      <p class="eyebrow">Soma Orders</p>
+      <h1>Purchase history.</h1>
+      <p>Review saved demo orders, remove anything you no longer want, and keep shopping from a dedicated history page.</p>
+      <p class="demo-notice"><strong>Demo mode:</strong> These are local sample orders saved in this browser. No payment is collected.</p>
+    </section>
+
+    <section class="auth-grid" data-history-guest-view>
+      <article class="account-card">
+        <h2>Sign in required</h2>
+        <p>Purchase history is separate from account settings, but it still belongs to your Soma ID.</p>
+        <a class="primary-action link-action" href="account.html">Sign in or create account</a>
+      </article>
+
+      <article class="account-card account-card-secondary">
+        <h2>Looking for the shop?</h2>
+        <p>Browse Eidolon-Frames, repair parts, accessories, and upgrades before saving demo orders.</p>
+        <a class="secondary-action link-action" href="shop.html">Visit shop</a>
+      </article>
+    </section>
+
+    <section class="member-dashboard" data-history-member-view hidden>
+      <div class="dashboard-heading">
+        <div>
+          <p class="eyebrow">Order archive</p>
+          <h2><span data-history-name></span>'s purchase history</h2>
+          <p data-history-email></p>
+        </div>
+        <button class="secondary-action" type="button" data-logout>Sign out</button>
+      </div>
+
+      <article class="account-card history-card">
+        <div class="history-heading">
+          <div>
+            <h2>Saved demo orders</h2>
+            <p>Remove any item you decide you no longer want in your history.</p>
+          </div>
+          <a class="text-link" href="shop.html">Visit shop</a>
+        </div>
+        <p class="form-message history-message" data-history-message role="status" aria-live="polite"></p>
+        <div class="purchase-history" data-purchase-history></div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
