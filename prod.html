@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOMAINC</title>
+    <title>Products | SOMAINC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&family=Orbitron:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/search.js" defer></script>
     <script src="js/account.js" defer></script>
@@ -37,9 +40,11 @@
         <li>
             <a href="shop.html">Shop</a>
             <div class="dropdown-menu">
-                <a href="shop.html">Eidolon-Frames</a>
-                <a href="shop.html">Parts</a>
-                <!-- <a href="#">SomaLink</a> -->
+                <a href="shop.html#eidolon-models">Eidolon-Frames</a>
+                <a href="shop.html#eidolon-parts">Frame Components</a>
+                <a href="shop.html#eidolon-accessories">Body Adaptations</a>
+                <a href="shop.html#eidolon-repairs">Recovery Systems</a>
+                <a href="shop.html#eidolon-upgrades">Human Advancements</a>
             </div>
         </li>
     </ul>
@@ -48,102 +53,131 @@
     <div class="filler"></div>
     <div class="nav-right">
         <form class="search-bar" role="search" data-site-search>
-            <label class="sr-only" for="site-search">Search the site</label>
-            <input id="site-search" type="search" name="q" placeholder="Search..." autocomplete="off">
-            <button type="submit" aria-label="Search">&#128269;</button>
+            <label class="sr-only" for="site-search">Search Soma Inc.</label>
+            <input id="site-search" type="search" name="q" placeholder="Search Soma..." autocomplete="off">
+            <button type="submit" aria-label="Search Soma Inc.">&#128269;</button>
             <span class="search-status" data-search-status role="status" aria-live="polite"></span>
         </form>
         <a href="purchase-history.html" aria-label="View purchase history"><img src="images/cart.png" width="30" alt=""></a>
         <a href="account.html" class="account-link" data-account-link aria-label="Account"><img src="images/login.png" width="30" alt=""></a>
     </div>
     <div class="filler"></div>
-</nav>
-  </header>   
-  <div class="frame">
-    <h1 id="eframe">Eidolon-Frame:</h1>
-    <br><br>
-    <h3 id="humevo">Humanity’s Evolutionary Step Forward</h3>
-    <br>
-    <p id="humevo">The Eidolon-Frame is a groundbreaking innovation designed to extend and preserve human existence beyond the limitations of the biological body. Developed by Soma Inc. under the leadership of Eric Voss, this advanced synthetic vessel represents the height of technological and material engineering, providing a vital solution for ensuring humanity’s survival in an unpredictable and ever-changing world.</p>
-    <img id="vossschem" src="images/Eric-Voss-schematics.png" alt="schematics" width="800px"> 
-    <div class="para1"> 
-      <h3 id="whatframe">What is an Eidolon-Frame?</h3>
-      <br><br>
-      <p id="whatframe">The Eidolon-Frame is a humanoid synthetic body constructed from ultra-durable titanium alloys, selected for their unparalleled strength, lightweight nature, and resistance to environmental degradation. Its design emulates the structure of the human body while vastly enhancing physical abilities, such as strength, agility, and endurance. This makes it not only a vessel for preservation but also an optimized replacement for the frail human form.</p>
-      <img id="hands" src="images/hand-schematic.jpg" alt="schematics for hands" width="300px">
-      <br><br>
-      <dive id="eframe">
-        <h3 class="purpose">Purpose of the Eidolon-Frame</h3>
-        <br><br>
-        <p class="purpose">The primary goal of the Eidolon-Frame is to serve as an alternative vessel for human consciousness, enabling individuals to transcend the vulnerabilities of organic life. By hosting a person’s memories, personality, and cognitive functions, the frame ensures continuity of self, even in the face of illness, aging, or catastrophic events.</p>
-        <br>
-        <p class="addit">Additionally, the Eidolon-Frame is humanity’s best hope for enduring extreme conditions, including environmental collapse, space exploration, or post-apocalyptic scenarios. Its durable design and self-sufficient systems allow it to thrive where the human body would falter.</p>
-      <div>
-      <img id="schemdraw" src="images/Schematic-drawing.png" alt="schem. head" width="300px">
-      <div class="work">
-        <h3 >How It Works</h3>
-        <br><br>
-        <p >The Eidolon-Frame operates in tandem with the Somacloud, Soma Inc.’s revolutionary digital repository for human memories and personalities. Through a secure Bluetooth connection, the frame retrieves and integrates an individual’s data stored in the Somacloud, allowing it to function as a fully realized extension of the individual’s consciousness.</p>
-        <br>
-        <p >Looking ahead, the Eidolon-Frame is equipped for Somalink integration, powered by the advanced C.P.U.² (Cerebral Persona Uploader, Self Multiplier). This cutting-edge technology, still in development, will enable the complete transfer of human consciousness into an Eidolon-Frame, eliminating the dependency on biological bodies entirely.</p>
-      </div>
-      <img id="schemhead" src="images/schematic-head.png" alt="" width="350px">
-      <h3 class="best">Why It’s Humanity’s Best Option for Survival</h3>
-      <br><br><br><br>
-      <p class="best"> Ensures extraordinary resistance to wear such as environmental extremes, and physical damage, making it a long-term/permanent solution to mandkinds fragility: </p>
-      <br><br><br><br>
-      <ol class="reasons">
-       <li id="why">Unmatched Durability: The titanium construction ensures extraordinary resistance to wear, environmental extremes, and physical damage, making it a long-term solution for survival.</li>
-       <br>
-       <li id="why">Adaptable Technology: With future Somalink integration, the Eidolon-Frame has the potential to host complete consciousness, allowing humanity to overcome the constraints of physical mortality.</li>
-       <br>
-       <li id="why">Independence from Resources: Unlike biological bodies, Eidolon-Frames do not require food, water, or breathable air, making them perfectly suited for survival in space, deep-sea environments, or other extreme conditions.</li>
-       <br>
-       <li id="why">Legacy Preservation: By connecting to the Somacloud, the frame safeguards human individuality, ensuring no person’s essence or contributions are lost to time.</li>
-      </ol>
-        <DIV id="how">
-          <h3 id="">How It Was Made</h3>
-          <br><br>
-          <p id="">The development of the Eidolon-Frame is the result of years of pioneering research in material science, artificial intelligence, and neuroscience. Its titanium exoskeleton was engineered for both flexibility and resilience, while its internal systems mimic the neural pathways of the human brain, allowing seamless integration with external data. Advanced machine learning algorithms ensure the frame adapts dynamically to the needs of its user, making it a true extension of the individual it hosts.</p>
-          <br><br>
-          <p id="">In conclusion, the Eidolon-Frame is far more than a technological achievement—it is the key to humanity’s survival and evolution, offering a pathway to preserve the human spirit and legacy in the face of uncertainty.</p> 
-        </div>     
-    </div>
-  </div>
+  </nav>
+  </header>
 
-  <div class="cloud">
-    <h1 id="sctitle">Soma cloud</h1>
-    <br><br>
-    <h3>Somacloud: Preserving the Human Essence</h3>
-    <br><br>
-    <p>The Somacloud is a groundbreaking digital repository designed to ensure that no human life, memory, or experience is ever forgotten. Created by Soma Inc. in 2042 under the visionary leadership of Eric Voss, the Somacloud serves as the foundation for humanity’s next step in evolution, seamlessly blending cutting-edge technology with the timeless goal of preserving individuality.</p>
-    <br>
-    <h3>What is the Somacloud?</h3>
-    <br>
-    <p>The Somacloud is a secure, cloud-based system that allows individuals to upload their memories, personality traits, and cognitive patterns into a digital format. Acting as a backup for the mind, the Somacloud enables users to safeguard their essence and legacy, even in the face of physical mortality.</p>
-    <br>
-    <h3>Purpose of the Somacloud</h3>
-    <br><br>
-    <p>The primary goal of the Somacloud is to transcend the limitations of the human body, ensuring that the thoughts, experiences, and identities of individuals can be preserved indefinitely. Whether to offer comfort to loved ones, provide historical records, or serve as the foundation for consciousness transfer into synthetic vessels like the Eidolon-Frames, the Somacloud ensures that the human spirit endures, even in a rapidly changing world.</p>
-    <br><br>
-    <h3>How the Somacloud Works</h3>
-    <br><br>
-    <p>Using advanced neurological mapping technologies, the Somacloud records and digitizes an individual’s memories and personality traits. This data is stored securely in a vast network of servers, forming a detailed and dynamic representation of the user’s consciousness.</p>
-    <p>The Somacloud is also designed to integrate seamlessly with other Soma Inc. technologies, such as the Eidolon-Frames, which utilize Bluetooth connections to retrieve and apply stored data. Future advancements, including the Somalink C.P.U.², will enable full consciousness transfers, bridging the gap between digital preservation and physical embodiment.</p>
-    <br><br>
-    <h3>Why the Somacloud is Revolutionary</h3>
-    <br><br>
-    <ol>
-      <li>Preservation of Identity: The Somacloud ensures that no human mind is ever truly lost, preserving the memories and individuality of every user for future generations.</li>
-      <li>Foundation for New Life: As a key component of the Eidolon-Frame system, the Somacloud enables users to extend their existence beyond their biological lifespan.</li>
-      <li>Legacy and Comfort: Families and societies can benefit from access to the preserved knowledge and experiences of those who came before, offering insights, guidance, and emotional solace.</li>
-      <li>Humanity’s Safety Net: In an era of environmental, technological, and societal uncertainty, the Somacloud provides a vital safeguard for humanity’s collective knowledge and essence.</li>
-    </ol>
-    <br>
-    <h3>Vision for the Future</h3>
-    <br><br>
-    <p>The Somacloud is not merely a tool for preservation—it is the foundation for a new chapter in human history. As technologies like the Somalink C.P.U.² continue to evolve, the Somacloud will play an increasingly vital role in merging the physical and digital worlds, ensuring that humanity’s legacy thrives in any form.</p>
-    <p>With the Somacloud, Soma Inc. has redefined the boundaries of life and memory, offering humanity a future where no story, thought, or individual is ever truly lost.</p>
-  </div>
-</body>    
+  <main class="product-terminal">
+    <section class="terminal-hero" aria-labelledby="product-archive-title">
+      <p class="terminal-kicker">SOMA_OS://PRODUCT_ARCHIVE</p>
+      <h1 id="product-archive-title">Systems for preserving the human experience.</h1>
+      <p>Soma Inc. products are not ordinary machines. They are continuity systems: vessels, memory repositories, and transfer technologies designed to ensure that life, identity, and legacy are never forgotten.</p>
+      <p class="terminal-command">run humanity.future --preserve-memory --extend-life --sync-eidolon</p>
+    </section>
+
+    <section class="terminal-panel" id="eframe" aria-labelledby="eidolon-title">
+      <p class="terminal-kicker">PRODUCT_01 // EIDOLON-FRAME</p>
+      <h2 id="eidolon-title">Humanity's evolutionary step forward.</h2>
+      <p>The Eidolon-Frame is a highly advanced synthetic vessel developed to preserve human existence beyond the limits of the biological body. Engineered under Soma Inc. founder Eric Voss, it represents the next stage of human survival, cognition, and embodiment.</p>
+
+      <div class="terminal-visual">
+        <img src="images/Eric-Voss-schematics.png" alt="Eidolon-Frame schematic archive">
+      </div>
+
+      <div class="terminal-grid">
+        <article class="terminal-card">
+          <p class="terminal-code">define eidolon_frame</p>
+          <h3>What it is</h3>
+          <p>A humanoid synthetic body constructed from ultra-durable titanium alloys, designed to emulate the human form while expanding strength, endurance, and environmental resistance.</p>
+        </article>
+
+        <article class="terminal-card">
+          <p class="terminal-code">mission.primary</p>
+          <h3>Purpose</h3>
+          <p>The Eidolon-Frame serves as an alternative vessel for human consciousness, protecting memories, personality, and cognitive identity from illness, aging, catastrophe, and time.</p>
+        </article>
+
+        <article class="terminal-card">
+          <p class="terminal-code">sync.protocol</p>
+          <h3>How it works</h3>
+          <p>The frame operates with SomaCloud data through a secure receiver system, preparing each vessel for future Somalink C.P.U.<sup>2</sup> consciousness-transfer integration.</p>
+        </article>
+      </div>
+
+      <div class="terminal-visual terminal-visual-head">
+        <img src="images/schematic-head.png" alt="Eidolon-Frame cranial schematic archive">
+      </div>
+
+      <div class="terminal-split">
+        <div class="terminal-visual">
+          <img src="images/hand-schematic.jpg" alt="Eidolon-Frame hand schematic archive">
+        </div>
+
+        <article class="terminal-card terminal-card-large">
+          <p class="terminal-code">survival.index</p>
+          <h3>Why it is humanity's best option</h3>
+          <ol class="terminal-list">
+            <li><span>Unmatched durability:</span> engineered to withstand physical damage, environmental extremes, and long-term wear.</li>
+            <li><span>Adaptive technology:</span> built for future Somalink integration and full continuity hosting.</li>
+            <li><span>Resource independence:</span> designed for space, deep-sea environments, collapse scenarios, and places the organic body cannot endure.</li>
+            <li><span>Legacy preservation:</span> connected to SomaCloud so human individuality is never lost to time.</li>
+          </ol>
+        </article>
+      </div>
+
+      <article class="terminal-card terminal-card-wide">
+        <p class="terminal-code">origin.build</p>
+        <h3>How it was made</h3>
+        <p>The Eidolon-Frame emerged from material science, artificial intelligence, and neuroscience research. Its resilient exoskeleton, adaptive learning systems, and human-mapped pathways allow it to become a true extension of the individual it hosts.</p>
+        <p>It is more than a technological achievement. It is a path toward preserving the human spirit when the biological body can no longer continue.</p>
+      </article>
+    </section>
+
+    <section class="terminal-panel" id="sctitle" aria-labelledby="somacloud-title">
+      <p class="terminal-kicker">PRODUCT_02 // SOMACLOUD</p>
+      <h2 id="somacloud-title">Preserving the human essence.</h2>
+      <p>SomaCloud is a secure digital repository created to ensure that no life, memory, or experience is ever forgotten. Introduced in 2042, it is the foundation of Soma Inc.'s mission to preserve individuality across generations.</p>
+
+      <div class="terminal-visual terminal-visual-cloud">
+        <img src="images/somacloud.png" alt="SomaCloud digital preservation archive">
+      </div>
+
+      <div class="terminal-grid">
+        <article class="terminal-card">
+          <p class="terminal-code">archive.memory</p>
+          <h3>What it is</h3>
+          <p>A cloud-based system that stores memories, personality traits, and cognitive patterns as a living backup of the self.</p>
+        </article>
+
+        <article class="terminal-card">
+          <p class="terminal-code">purpose.legacy</p>
+          <h3>Purpose</h3>
+          <p>SomaCloud protects identity from physical mortality and creates the foundation for transfer into synthetic vessels like the Eidolon-Frame.</p>
+        </article>
+
+        <article class="terminal-card">
+          <p class="terminal-code">process.scan</p>
+          <h3>How it works</h3>
+          <p>Advanced neurological mapping records and digitizes the patterns that define a person, then prepares that data for SomaCloud access and future Somalink transfer.</p>
+        </article>
+      </div>
+
+      <article class="terminal-card terminal-card-wide">
+        <p class="terminal-code">revolution.status</p>
+        <h3>Why SomaCloud matters</h3>
+        <ol class="terminal-list">
+          <li><span>Identity preservation:</span> memory and individuality remain available for future generations.</li>
+          <li><span>Foundation for new life:</span> SomaCloud supports the Eidolon-Frame system and continuity beyond the biological lifespan.</li>
+          <li><span>Legacy and comfort:</span> families retain access to knowledge, stories, guidance, and emotional connection.</li>
+          <li><span>Humanity's safety net:</span> collective experience survives uncertainty, collapse, and technological change.</li>
+        </ol>
+      </article>
+
+      <article class="terminal-card terminal-card-wide">
+        <p class="terminal-code">future.bridge</p>
+        <h3>Vision for the future</h3>
+        <p>SomaCloud is not merely storage. It is the bridge between the physical and digital worlds. As Somalink C.P.U.<sup>2</sup> evolves, SomaCloud will ensure humanity's legacy thrives in any form.</p>
+        <p>With SomaCloud, Soma Inc. redefines the boundary between life, memory, and technological continuity.</p>
+      </article>
+    </section>
+  </main>
+</body>
 </html>
