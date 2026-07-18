@@ -524,7 +524,15 @@ padding-top: 18vw;
     opacity: 0.32;
 }
 
-.prodscroll header,
+.prodscroll header {
+    position: relative;
+    z-index: 3000;
+}
+
+.prodscroll .navbar {
+    z-index: 3100;
+}
+
 .product-terminal {
     position: relative;
     z-index: 1;
@@ -546,6 +554,7 @@ padding-top: 18vw;
 .terminal-hero,
 .terminal-panel,
 .terminal-card {
+    box-sizing: border-box;
     border: 1px solid rgba(133, 255, 185, 0.36);
     background:
         linear-gradient(180deg, rgba(5, 25, 20, 0.92), rgba(2, 9, 14, 0.9)),
@@ -565,6 +574,11 @@ padding-top: 18vw;
 .terminal-panel {
     margin-top: 34px;
     scroll-margin-top: 118px;
+}
+
+.prodscroll .terminal-panel#eframe,
+.prodscroll .terminal-panel#sctitle {
+    padding: clamp(28px, 5vw, 56px);
 }
 
 .terminal-kicker,
@@ -652,12 +666,13 @@ padding-top: 18vw;
 
 .terminal-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 18px;
     margin-top: 28px;
 }
 
 .terminal-card {
+    min-width: 0;
     border-radius: 14px;
     padding: 24px;
 }
@@ -669,6 +684,7 @@ padding-top: 18vw;
     font-size: 1.08rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+    overflow-wrap: anywhere;
 }
 
 .terminal-card-large,
