@@ -45,6 +45,7 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Removed the News & Events archive terminal intro paragraph and changed the Soma Inc. terminal copyright year to 2038.
 - Added clickable opened-log media previews with an enlarged terminal-style viewer and translucent description overlay.
 - Standardized the navigation bar across all main pages using the Home page layout and typography.
+- Restored the full Shop dropdown category list across all main pages.
 
 ## Backlog
 
@@ -142,6 +143,13 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - What changed: Standardized the navbar markup, dropdown labels, search placeholder, cart/account icons, and Home page typography treatment across all main pages. Fixed old News dropdown links that still pointed to `event.html`.
 - Why it changed: The navigation bar needed to remain visually and structurally consistent between pages while preserving the Home page format.
 - Validation done: Ran JavaScript syntax checks, whitespace diff check, local nav consistency checks, and browser checks across the main pages.
+
+### 2026-07-21
+
+- Pages/files changed: `index.html`, `events.html`, `prod.html`, `shop.html`, `account.html`, `purchase-history.html`, `SPRINT.md`
+- What changed: Restored the full Shop dropdown category list: Eidolon-Frames, Frame Components, Body Adaptations, Recovery Systems, Human Advancements, and SomaCloud & Somalink.
+- Why it changed: The Shop navigation needed the fuller category list back while keeping the Home page navbar format consistent across the website.
+- Validation done: Ran JavaScript syntax checks, whitespace diff check, local nav consistency checks, and browser verification that every restored Shop dropdown link appears on each main page and points to an existing Shop section.
 
 ## Change-log format for future updates
 
