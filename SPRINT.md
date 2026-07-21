@@ -40,6 +40,7 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Updated the News & Events archive terminal to move one screen at a time from Files to Attachments to Opened Log, with Back navigation.
 - Recolored the News & Events archive terminal to match the Products page's dark teal, mint, and cyan Soma Inc. palette.
 - Added a live archive-terminal date/time display that uses today's real date, weekday, and time while showing the year as 2122.
+- Fit the News & Events archive terminal to the visible screen so the page itself no longer needs scrolling.
 
 ## Backlog
 
@@ -102,6 +103,13 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - What changed: Replaced the archive terminal's hardcoded status date with a live browser-based clock that displays today's real month, day, weekday, and time while forcing the story year to read `2122`.
 - Why it changed: The News & Events terminal needed to feel current and alive without breaking the future Soma Inc. timeline.
 - Validation done: Ran JavaScript syntax checks, whitespace diff check, and local browser verification of the live `2122` terminal clock.
+
+### 2026-07-21
+
+- Pages/files changed: `events.html`, `css/style.css`, `SPRINT.md`
+- What changed: Converted the News & Events archive terminal into a fit-to-screen layout with locked page height, flexible terminal panels, smaller status/intro spacing, and internal panel scrolling only when content is too large.
+- Why it changed: The archive terminal needed to sit fully inside the visible browser window so users can operate it without scrolling the page.
+- Validation done: Ran CSS/JavaScript checks, whitespace diff check, and browser layout tests at the normal app viewport plus a 1280x720 stress viewport confirming no document scroll.
 
 ## Change-log format for future updates
 
