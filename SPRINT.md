@@ -41,6 +41,7 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Recolored the News & Events archive terminal to match the Products page's dark teal, mint, and cyan Soma Inc. palette.
 - Added a live archive-terminal date/time display that uses today's real date, weekday, and time while showing the year as 2122.
 - Fit the News & Events archive terminal to the visible screen so the page itself no longer needs scrolling.
+- Centered and narrowed the News & Events archive terminal into a more square monitor shape with side spacing similar to the Products page.
 
 ## Backlog
 
@@ -110,6 +111,13 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - What changed: Converted the News & Events archive terminal into a fit-to-screen layout with locked page height, flexible terminal panels, smaller status/intro spacing, and internal panel scrolling only when content is too large.
 - Why it changed: The archive terminal needed to sit fully inside the visible browser window so users can operate it without scrolling the page.
 - Validation done: Ran CSS/JavaScript checks, whitespace diff check, and browser layout tests at the normal app viewport plus a 1280x720 stress viewport confirming no document scroll.
+
+### 2026-07-21
+
+- Pages/files changed: `events.html`, `css/style.css`, `SPRINT.md`
+- What changed: Narrowed and centered the News & Events archive terminal, capped it at a more square monitor-style size, and reduced the rounded CRT corners so it visually relates better to the Products page panels while keeping side breathing room.
+- Why it changed: The terminal felt too wide and screen-filling after the fit-to-screen pass; it needed to feel like a centered object on the page instead of covering the whole viewport.
+- Validation done: Ran CSS/JavaScript checks, whitespace diff check, and browser layout verification confirming equal side spacing, no page scroll, and working file-to-attachment-to-opened-log flow.
 
 ## Change-log format for future updates
 
