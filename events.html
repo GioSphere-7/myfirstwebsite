@@ -4,26 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOMAINC</title>
+    <title>SOMAINC | News & Events Archive</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/search.js" defer></script>
     <script src="js/account.js" defer></script>
+    <script src="js/events-terminal.js" defer></script>
 </head>
 
 <body class="events">
-  <header>
+<header>
   <!-- NAVBAR CODE-->
   <nav class="navbar">
     <div class="filler"></div>
-    <a href="index.html" class="logo"> <img src="images/logo.png" width="110" alt=""></a>
+    <a href="index.html" class="logo"> <img src="images/logo.png" width="110" alt="Soma Inc."></a>
     <ul>
         <div class="filler"></div>
         <li>
             <a href="events.html">News & Events</a>
             <div class="dropdown-menu">
-                <a href="event.html">Documents</a>
-                <!-- <a href="#">Articles</a>
-                <a href="#">Events</a> -->
+                <a href="events.html#event-terminal">Archive Terminal</a>
+                <a href="events.html#archive-files">File Logs</a>
             </div>
         </li>
         <li>
@@ -31,7 +31,6 @@
             <div class="dropdown-menu">
                 <a href="prod.html#eframe">Eidolon-Frame</a>
                 <a href="prod.html#sctitle">SomaCloud</a>
-                <!-- <a href="#">SomaLink</a> -->
             </div>
         </li>
         <li>
@@ -39,7 +38,6 @@
             <div class="dropdown-menu">
                 <a href="shop.html">Eidolon-Frames</a>
                 <a href="shop.html">Parts</a>
-                <!-- <a href="#">SomaLink</a> -->
             </div>
         </li>
     </ul>
@@ -57,10 +55,69 @@
         <a href="account.html" class="account-link" data-account-link aria-label="Account"><img src="images/login.png" width="30" alt=""></a>
     </div>
     <div class="filler"></div>
-</nav>
+  </nav>
 </header>
-</nav>
-  <img id="page1" src="images/Panel1.png" width="405px" alt="">
-  <img class="page2" src="images/Page2.png"  width="405px" alt="">
+
+<main class="event-archive" id="event-terminal" data-terminal-app>
+    <section class="archive-shell" aria-labelledby="archive-title">
+        <div class="archive-bezel">
+            <div class="archive-screen">
+                <div class="archive-boot">
+                    <p>SOMA INC. UNITED OPERATING SYSTEM</p>
+                    <p>COPYRIGHT 2075-2077 SOMA INC. ARCHIVE SERVER</p>
+                    <p>- SERVER 01 / PUBLIC RELEASE TERMINAL -</p>
+                </div>
+
+                <div class="archive-status" aria-label="Terminal status">
+                    <span>&gt; 2077.07.21 - TUESDAY - 03:33</span>
+                    <span>&gt; CPU: 91% | MEM: 30% | SYNC: ONLINE</span>
+                    <span>&gt; CLEARANCE: PUBLIC OBSERVER</span>
+                </div>
+
+                <div class="archive-intro">
+                    <p class="archive-kicker">Property of Soma Inc. // News & Events</p>
+                    <h1 id="archive-title">Archive Terminal</h1>
+                    <p>Select a file log to view its attachments. Open an attachment to load newspaper clippings, comic strips, schematic documents, and audio transmissions recovered from the Soma Inc. archive.</p>
+                </div>
+
+                <div class="archive-grid">
+                    <aside class="archive-panel archive-files" id="archive-files" aria-labelledby="files-title">
+                        <div class="archive-panel-title">
+                            <h2 id="files-title">[FILES]</h2>
+                            <span data-file-count>0 items</span>
+                        </div>
+                        <div class="archive-list" data-file-list></div>
+                    </aside>
+
+                    <aside class="archive-panel archive-attachments" aria-labelledby="attachments-title">
+                        <div class="archive-panel-title">
+                            <h2 id="attachments-title">[ATTACHMENTS]</h2>
+                            <span data-attachment-count>Select file</span>
+                        </div>
+                        <p class="archive-instruction" data-file-summary>Choose a file on the left to display its contained attachments.</p>
+                        <div class="archive-list" data-attachment-list></div>
+                    </aside>
+
+                    <section class="archive-panel archive-viewer" aria-labelledby="viewer-title">
+                        <div class="archive-panel-title">
+                            <h2 id="viewer-title">[OPENED LOG]</h2>
+                            <span data-viewer-type>Idle</span>
+                        </div>
+                        <div class="archive-output" data-viewer>
+                            <p class="archive-placeholder">&gt; Awaiting file selection...</p>
+                            <p class="archive-placeholder">&gt; Use the file directory to load archive contents.</p>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="archive-footer">
+                    <span>[TAB] CHANGE COLUMN</span>
+                    <span>[ENTER] OPEN SELECTED</span>
+                    <span>[R] LOAD ARCHIVE</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
 </body>
 </html>

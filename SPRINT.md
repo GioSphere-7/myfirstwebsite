@@ -13,6 +13,7 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Continue polishing page alignment, spacing, and readability across Home, Products, Shop, Account, and Purchase History.
 - Keep the Products page centered, legible, and consistent with the retro terminal / futuristic tech-company style.
 - Keep shop copy and product descriptions aligned with the Soma Inc. narrative tone.
+- Keep the News & Events archive terminal expandable as more story files, attachments, and media are added.
 
 ### Next up
 
@@ -35,6 +36,7 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Fixed the `schematic-head` image path.
 - Fixed navbar clickability on the Products page.
 - Fixed Products page alignment where old `#eframe` and `#sctitle` CSS offsets made the page illegible.
+- Rebuilt News & Events as an interactive Fallout-style archive terminal with selectable files and attachments.
 
 ## Backlog
 
@@ -44,6 +46,7 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Create a consistent visual system for Soma Inc. panels, cards, buttons, and callouts.
 - Add lore-rich News & Events content.
 - Add a stronger homepage call-to-action path into Products and Shop.
+- Add more real archive media to News & Events, such as additional newspaper clippings, comic pages, and recorded audio files.
 
 ### Shop and purchase flow
 
@@ -67,6 +70,15 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Add basic automated checks for broken local links and missing assets.
 - Consider splitting larger CSS and JavaScript files once the site grows.
 
+## Change log
+
+### 2026-07-21
+
+- Pages/files changed: `events.html`, `css/style.css`, `js/events-terminal.js`, `js/search.js`, `SPRINT.md`
+- What changed: Replaced the static News & Events image layout with an interactive archive terminal. Users can select file logs, view contained attachments, and open newspaper clippings, comic strips, schematic images, and simulated audio logs.
+- Why it changed: The page needed to feel like a Fallout-style console / save-log system instead of a static document page.
+- Validation done: Ran JavaScript syntax checks, whitespace diff check, local asset reference check, and live browser smoke tests for file selection, comic loading, clipping loading, and audio playback toggle.
+
 ## Change-log format for future updates
 
 When the website changes, add a short note here:
@@ -76,4 +88,3 @@ When the website changes, add a short note here:
 - What changed
 - Why it changed
 - Validation done
-

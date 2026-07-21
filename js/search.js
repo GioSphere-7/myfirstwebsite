@@ -1,8 +1,8 @@
 const siteSearchEntries = [
   {
     label: "News & Events",
-    url: "events.html",
-    keywords: ["news", "event", "events", "news and events", "documents", "articles", "updates"]
+    url: "events.html#event-terminal",
+    keywords: ["news", "event", "events", "news and events", "documents", "articles", "updates", "archive", "terminal", "fallout", "files", "attachments", "newspaper", "clipping", "comic", "comic strip", "audio", "audio log", "save logs", "holotape"]
   },
   {
     label: "Eidolon-Frame",
