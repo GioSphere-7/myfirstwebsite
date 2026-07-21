@@ -38,6 +38,7 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Fixed Products page alignment where old `#eframe` and `#sctitle` CSS offsets made the page illegible.
 - Rebuilt News & Events as an interactive Fallout-style archive terminal with selectable files and attachments.
 - Updated the News & Events archive terminal to move one screen at a time from Files to Attachments to Opened Log, with Back navigation.
+- Recolored the News & Events archive terminal to match the Products page's dark teal, mint, and cyan Soma Inc. palette.
 
 ## Backlog
 
@@ -86,6 +87,13 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - What changed: Converted the archive terminal from a three-column layout into a step-by-step screen flow. Users now move from Files to Attachments to Opened Log one page at a time, with a Back button and breadcrumb trail for returning to the previous screen.
 - Why it changed: The archive needed to feel more like a terminal/save-log interface where each selection opens a new screen instead of exposing every panel at once.
 - Validation done: Ran JavaScript syntax checks, whitespace diff check, asset reference check, and live browser tests for Files → Attachments → Opened Log → Back → Back.
+
+### 2026-07-21
+
+- Pages/files changed: `events.html`, `css/style.css`, `SPRINT.md`
+- What changed: Updated the News & Events archive terminal colors and font imports to match the Products page's Eidolon-Frame look: deep teal/black panels, mint highlights, pale white-mint headings, and cyan-tinted glow.
+- Why it changed: The archive terminal needed to feel visually connected to the PRODUCT_01 // EIDOLON-FRAME product page instead of using a separate Fallout-green palette.
+- Validation done: Ran CSS/JavaScript checks, asset reference checks, and visual browser inspection of the recolored archive terminal.
 
 ## Change-log format for future updates
 

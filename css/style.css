@@ -753,23 +753,23 @@ padding-top: 18vw;
     overflow-y: auto;
     margin: 0;
     padding: 0;
-    color: #80ff7b;
-    font-family: "Courier New", Consolas, monospace;
+    color: #d8fff2;
+    font-family: "Exo 2", "Segoe UI", Arial, sans-serif;
     background:
-        radial-gradient(circle at 50% 18%, rgba(94, 255, 113, 0.13), transparent 34%),
-        linear-gradient(180deg, rgba(2, 8, 5, 0.76), rgba(2, 19, 14, 0.94)),
+        linear-gradient(rgba(4, 19, 16, 0.72), rgba(4, 19, 16, 0.72)),
+        radial-gradient(circle at center, rgba(64, 255, 162, 0.12), transparent 48%),
         url(../images/vosschest.png);
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #020907;
+    background-color: #03090d;
 }
 
 .events .navbar,
 .events .search-bar input,
 .events .search-bar button {
-    font-family: "Courier New", Consolas, monospace;
+    font-family: "Exo 2", "Segoe UI", Arial, sans-serif;
 }
 
 .event-archive {
@@ -787,13 +787,14 @@ padding-top: 18vw;
     background:
         repeating-linear-gradient(
             0deg,
-            rgba(112, 255, 108, 0.055) 0,
-            rgba(112, 255, 108, 0.055) 1px,
+            rgba(255, 255, 255, 0.035) 0,
+            rgba(255, 255, 255, 0.035) 1px,
             transparent 1px,
             transparent 4px
         ),
         radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.3) 74%);
     mix-blend-mode: screen;
+    opacity: 0.32;
 }
 
 .archive-shell {
@@ -805,15 +806,16 @@ padding-top: 18vw;
 
 .archive-bezel {
     padding: clamp(14px, 2vw, 28px);
-    border: 1px solid rgba(194, 218, 180, 0.25);
+    border: 1px solid rgba(133, 255, 185, 0.22);
     border-radius: clamp(26px, 4vw, 58px);
     background:
-        linear-gradient(135deg, rgba(160, 166, 146, 0.34), rgba(34, 38, 31, 0.92) 18%, rgba(2, 5, 4, 0.96) 76%, rgba(174, 181, 157, 0.32)),
-        #151914;
+        linear-gradient(135deg, rgba(9, 41, 37, 0.86), rgba(2, 9, 14, 0.96) 34%, rgba(4, 25, 38, 0.82)),
+        #02090e;
     box-shadow:
         0 42px 90px rgba(0, 0, 0, 0.58),
-        inset 0 0 34px rgba(245, 255, 224, 0.18),
-        inset 0 0 4px rgba(255, 255, 255, 0.28);
+        0 0 0 1px rgba(98, 213, 234, 0.12),
+        inset 0 0 34px rgba(67, 255, 167, 0.08),
+        inset 0 0 4px rgba(255, 255, 255, 0.16);
 }
 
 .archive-screen {
@@ -821,18 +823,20 @@ padding-top: 18vw;
     overflow: hidden;
     min-height: 730px;
     padding: clamp(22px, 3vw, 44px);
-    border: 2px solid rgba(127, 255, 126, 0.18);
+    border: 2px solid rgba(133, 255, 185, 0.36);
     border-radius: clamp(20px, 3vw, 42px);
-    color: #7dff72;
+    color: #c8f5d8;
     background:
-        radial-gradient(ellipse at center, rgba(37, 135, 56, 0.35), rgba(4, 22, 10, 0.88) 56%, rgba(0, 0, 0, 0.97) 100%),
-        #010503;
+        linear-gradient(180deg, rgba(5, 25, 20, 0.92), rgba(2, 9, 14, 0.9)),
+        rgba(4, 25, 38, 0.86);
     box-shadow:
-        inset 0 0 70px rgba(31, 255, 64, 0.17),
+        0 0 0 1px rgba(98, 213, 234, 0.12),
+        0 0 28px rgba(67, 255, 167, 0.11),
+        inset 0 0 70px rgba(67, 255, 167, 0.08),
         inset 0 0 190px rgba(0, 0, 0, 0.8);
     text-shadow:
-        0 0 6px rgba(99, 255, 88, 0.75),
-        0 0 16px rgba(50, 255, 60, 0.26);
+        0 0 10px rgba(108, 255, 177, 0.38),
+        0 0 22px rgba(98, 213, 234, 0.18);
 }
 
 .archive-screen::before,
@@ -849,7 +853,7 @@ padding-top: 18vw;
             0deg,
             rgba(0, 0, 0, 0.04) 0,
             rgba(0, 0, 0, 0.04) 2px,
-            rgba(112, 255, 108, 0.05) 3px,
+            rgba(108, 255, 177, 0.04) 3px,
             transparent 5px
         );
     opacity: 0.95;
@@ -872,7 +876,8 @@ padding-top: 18vw;
 
 .archive-boot {
     text-align: center;
-    color: #c9ffbb;
+    color: #f3fff8;
+    font-family: "Orbitron", "Exo 2", Arial, sans-serif;
     font-size: clamp(0.86rem, 1.35vw, 1.15rem);
     font-weight: 700;
     letter-spacing: 0.12em;
@@ -889,15 +894,15 @@ padding-top: 18vw;
     width: min(760px, 82%);
     height: 3px;
     margin: 18px auto 0;
-    background: linear-gradient(90deg, transparent, rgba(208, 255, 184, 0.92), transparent);
-    box-shadow: 0 0 12px rgba(132, 255, 120, 0.75);
+    background: linear-gradient(90deg, transparent, rgba(108, 255, 177, 0.92), transparent);
+    box-shadow: 0 0 12px rgba(108, 255, 177, 0.55);
 }
 
 .archive-status {
     display: grid;
     gap: 9px;
     margin: 26px 0 22px;
-    color: #a7ffa1;
+    color: #c8f5d8;
     font-size: clamp(0.82rem, 1.4vw, 1rem);
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -910,15 +915,18 @@ padding-top: 18vw;
 }
 
 .archive-kicker {
-    color: #35ff45;
+    color: #6cffb1;
+    font-family: "Orbitron", "Exo 2", Arial, sans-serif;
     font-weight: 700;
     letter-spacing: 0.16em;
     text-transform: uppercase;
+    text-shadow: 0 0 12px rgba(108, 255, 177, 0.55);
 }
 
 .archive-intro h1 {
     margin: 8px 0 14px;
-    color: #d9ffd2;
+    color: #f3fff8;
+    font-family: "Orbitron", "Exo 2", Arial, sans-serif;
     font-size: clamp(2.2rem, 6vw, 5.2rem);
     line-height: 0.98;
     letter-spacing: 0.08em;
@@ -928,7 +936,7 @@ padding-top: 18vw;
 .archive-intro p:not(.archive-kicker) {
     max-width: 900px;
     margin: 0 auto;
-    color: #bdffba;
+    color: #c8f5d8;
     font-size: clamp(0.95rem, 1.5vw, 1.08rem);
     line-height: 1.7;
 }
@@ -939,23 +947,24 @@ padding-top: 18vw;
     justify-content: space-between;
     gap: 16px;
     margin: 0 0 16px;
-    border: 1px solid rgba(126, 255, 122, 0.28);
-    background: rgba(0, 12, 4, 0.52);
+    border: 1px solid rgba(133, 255, 185, 0.36);
+    background: rgba(4, 25, 38, 0.62);
     box-shadow:
-        inset 0 0 18px rgba(56, 255, 72, 0.045),
-        0 0 14px rgba(54, 255, 64, 0.06);
+        0 0 0 1px rgba(98, 213, 234, 0.12),
+        inset 0 0 18px rgba(67, 255, 167, 0.055),
+        0 0 14px rgba(67, 255, 167, 0.08);
 }
 
 .archive-back {
     flex: 0 0 auto;
     min-width: 182px;
     border: 0;
-    border-right: 1px solid rgba(126, 255, 122, 0.28);
+    border-right: 1px solid rgba(108, 255, 177, 0.28);
     padding: 13px 16px;
-    color: #061106;
+    color: #03120f;
     background:
-        linear-gradient(90deg, rgba(38, 255, 55, 0.96), rgba(42, 255, 64, 0.72)),
-        #46ff4f;
+        linear-gradient(90deg, rgba(108, 255, 177, 0.96), rgba(98, 213, 234, 0.72)),
+        #6cffb1;
     font-family: "Courier New", Consolas, monospace;
     font-weight: 900;
     letter-spacing: 0.08em;
@@ -967,14 +976,14 @@ padding-top: 18vw;
 .archive-back:not(:disabled):hover,
 .archive-back:not(:disabled):focus-visible {
     outline: 0;
-    background: #d8ffd0;
+    background: #f3fff8;
     box-shadow:
-        0 0 18px rgba(44, 255, 50, 0.45),
+        0 0 18px rgba(108, 255, 177, 0.45),
         inset 0 0 10px rgba(255, 255, 255, 0.24);
 }
 
 .archive-back:disabled {
-    color: rgba(130, 255, 124, 0.36);
+    color: rgba(200, 245, 216, 0.38);
     background: rgba(0, 0, 0, 0.12);
     cursor: not-allowed;
 }
@@ -984,7 +993,7 @@ padding-top: 18vw;
     margin: 0;
     padding: 12px 16px;
     overflow: hidden;
-    color: #c8ffc0;
+    color: #c8f5d8;
     font-size: clamp(0.82rem, 1.25vw, 1rem);
     font-weight: 900;
     letter-spacing: 0.08em;
@@ -1004,12 +1013,15 @@ padding-top: 18vw;
     display: none;
     min-width: 0;
     min-height: 560px;
-    border: 1px solid rgba(126, 255, 122, 0.28);
+    border: 1px solid rgba(133, 255, 185, 0.36);
     border-radius: 6px;
-    background: rgba(0, 9, 4, 0.52);
+    background:
+        linear-gradient(180deg, rgba(5, 25, 20, 0.82), rgba(2, 9, 14, 0.78)),
+        rgba(4, 25, 38, 0.62);
     box-shadow:
-        inset 0 0 26px rgba(56, 255, 72, 0.055),
-        0 0 20px rgba(54, 255, 64, 0.08);
+        0 0 0 1px rgba(98, 213, 234, 0.12),
+        inset 0 0 26px rgba(67, 255, 167, 0.055),
+        0 0 20px rgba(67, 255, 167, 0.08);
 }
 
 .archive-panel.is-view-active {
@@ -1043,12 +1055,13 @@ padding-top: 18vw;
     justify-content: space-between;
     gap: 12px;
     padding: 12px 14px;
-    border-bottom: 1px solid rgba(126, 255, 122, 0.24);
-    color: #d5ffcf;
+    border-bottom: 1px solid rgba(108, 255, 177, 0.24);
+    color: #f3fff8;
 }
 
 .archive-panel-title h2 {
     margin: 0;
+    font-family: "Orbitron", "Exo 2", Arial, sans-serif;
     font-size: 0.98rem;
     letter-spacing: 0.13em;
     text-transform: uppercase;
@@ -1056,7 +1069,7 @@ padding-top: 18vw;
 
 .archive-panel-title span {
     flex: 0 0 auto;
-    color: #89ff82;
+    color: #6cffb1;
     font-size: 0.72rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -1076,7 +1089,7 @@ padding-top: 18vw;
 .archive-instruction {
     min-height: 4.8em;
     padding: 12px 14px 0;
-    color: #b8ffb1;
+    color: #c8f5d8;
     font-size: 0.88rem;
     line-height: 1.55;
 }
@@ -1087,8 +1100,8 @@ padding-top: 18vw;
     border: 0;
     border-left: 3px solid transparent;
     padding: 10px 10px 10px 24px;
-    color: #60ff60;
-    background: rgba(0, 0, 0, 0.12);
+    color: #6cffb1;
+    background: rgba(0, 0, 0, 0.28);
     font-family: "Courier New", Consolas, monospace;
     font-size: clamp(0.82rem, 1.1vw, 1rem);
     font-weight: 700;
@@ -1109,13 +1122,13 @@ padding-top: 18vw;
 .archive-row:focus-visible,
 .archive-row.is-active {
     outline: 0;
-    border-left-color: #d8ffcc;
-    color: #061106;
+    border-left-color: #f3fff8;
+    color: #03120f;
     background:
-        linear-gradient(90deg, rgba(38, 255, 55, 0.96), rgba(42, 255, 64, 0.72)),
-        #46ff4f;
+        linear-gradient(90deg, rgba(108, 255, 177, 0.96), rgba(98, 213, 234, 0.72)),
+        #6cffb1;
     box-shadow:
-        0 0 18px rgba(44, 255, 50, 0.45),
+        0 0 18px rgba(108, 255, 177, 0.45),
         inset 0 0 10px rgba(255, 255, 255, 0.24);
     text-shadow: none;
 }
@@ -1140,7 +1153,7 @@ padding-top: 18vw;
 .archive-placeholder,
 .archive-caption,
 .archive-transcript p {
-    color: #bfffba;
+    color: #c8f5d8;
     line-height: 1.6;
 }
 
@@ -1157,7 +1170,7 @@ padding-top: 18vw;
 .archive-manifest {
     margin: 10px 0 0;
     padding-left: 22px;
-    color: #8cff83;
+    color: #6cffb1;
     line-height: 1.7;
 }
 
@@ -1251,7 +1264,8 @@ padding-top: 18vw;
 .archive-comic h3,
 .archive-audio h3 {
     margin: 0;
-    color: #ddffd7;
+    color: #f3fff8;
+    font-family: "Orbitron", "Exo 2", Arial, sans-serif;
     font-size: clamp(1.2rem, 2.6vw, 2rem);
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -1269,7 +1283,7 @@ padding-top: 18vw;
     width: 100%;
     max-height: 520px;
     object-fit: contain;
-    border: 1px solid rgba(126, 255, 122, 0.26);
+    border: 1px solid rgba(108, 255, 177, 0.26);
     border-radius: 4px;
     background: rgba(0, 0, 0, 0.24);
     box-shadow: 0 18px 36px rgba(0, 0, 0, 0.32);
@@ -1278,12 +1292,12 @@ padding-top: 18vw;
 .archive-image-attachment figcaption {
     display: grid;
     gap: 8px;
-    color: #beffb7;
+    color: #c8f5d8;
     line-height: 1.55;
 }
 
 .archive-image-attachment figcaption strong {
-    color: #e8ffe4;
+    color: #f3fff8;
     font-size: 1.18rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -1293,16 +1307,16 @@ padding-top: 18vw;
     display: grid;
     gap: 12px;
     padding: 14px;
-    border: 1px solid rgba(126, 255, 122, 0.3);
-    background: rgba(3, 17, 7, 0.76);
+    border: 1px solid rgba(108, 255, 177, 0.3);
+    background: rgba(2, 9, 14, 0.76);
 }
 
 .archive-action {
     justify-self: start;
-    border: 1px solid rgba(126, 255, 122, 0.52);
+    border: 1px solid rgba(108, 255, 177, 0.52);
     padding: 9px 14px;
-    color: #091409;
-    background: #65ff61;
+    color: #03120f;
+    background: #6cffb1;
     font-family: "Courier New", Consolas, monospace;
     font-weight: 900;
     letter-spacing: 0.08em;
@@ -1313,14 +1327,14 @@ padding-top: 18vw;
 .archive-action:hover,
 .archive-action:focus-visible {
     outline: 0;
-    background: #d8ffd0;
-    box-shadow: 0 0 18px rgba(104, 255, 93, 0.5);
+    background: #f3fff8;
+    box-shadow: 0 0 18px rgba(108, 255, 177, 0.5);
 }
 
 .archive-audio-progress {
     height: 12px;
     overflow: hidden;
-    border: 1px solid rgba(126, 255, 122, 0.34);
+    border: 1px solid rgba(108, 255, 177, 0.34);
     background: rgba(0, 0, 0, 0.5);
 }
 
@@ -1328,8 +1342,8 @@ padding-top: 18vw;
     display: block;
     width: 0;
     height: 100%;
-    background: linear-gradient(90deg, #38ff38, #caffbf);
-    box-shadow: 0 0 14px rgba(78, 255, 69, 0.7);
+    background: linear-gradient(90deg, #6cffb1, #62d5ea);
+    box-shadow: 0 0 14px rgba(98, 213, 234, 0.7);
     transition: width 0.1s linear;
 }
 
@@ -1345,8 +1359,8 @@ padding-top: 18vw;
     display: block;
     height: 18%;
     min-height: 6px;
-    background: rgba(116, 255, 108, 0.72);
-    box-shadow: 0 0 10px rgba(77, 255, 69, 0.46);
+    background: rgba(108, 255, 177, 0.72);
+    box-shadow: 0 0 10px rgba(98, 213, 234, 0.46);
 }
 
 .archive-wave span:nth-child(3n) {
@@ -1382,7 +1396,7 @@ padding-top: 18vw;
 }
 
 .archive-transcript {
-    border-left: 3px solid rgba(126, 255, 122, 0.34);
+    border-left: 3px solid rgba(108, 255, 177, 0.34);
     padding-left: 14px;
 }
 
@@ -1392,7 +1406,7 @@ padding-top: 18vw;
     justify-content: center;
     gap: 14px 30px;
     margin-top: 24px;
-    color: #baffb4;
+    color: #c8f5d8;
     font-size: 0.82rem;
     font-weight: 900;
     letter-spacing: 0.09em;
@@ -1447,7 +1461,7 @@ padding-top: 18vw;
     .archive-back {
         width: 100%;
         border-right: 0;
-        border-bottom: 1px solid rgba(126, 255, 122, 0.28);
+        border-bottom: 1px solid rgba(108, 255, 177, 0.28);
     }
 
     .archive-breadcrumb {
