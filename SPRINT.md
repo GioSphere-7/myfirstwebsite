@@ -42,6 +42,7 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Added a live archive-terminal date/time display that uses today's real date, weekday, and time while showing the year as 2122.
 - Fit the News & Events archive terminal to the visible screen so the page itself no longer needs scrolling.
 - Centered and narrowed the News & Events archive terminal into a more square monitor shape with side spacing similar to the Products page.
+- Removed the News & Events archive terminal intro paragraph and changed the Soma Inc. terminal copyright year to 2038.
 
 ## Backlog
 
@@ -118,6 +119,13 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - What changed: Narrowed and centered the News & Events archive terminal, capped it at a more square monitor-style size, and reduced the rounded CRT corners so it visually relates better to the Products page panels while keeping side breathing room.
 - Why it changed: The terminal felt too wide and screen-filling after the fit-to-screen pass; it needed to feel like a centered object on the page instead of covering the whole viewport.
 - Validation done: Ran CSS/JavaScript checks, whitespace diff check, and browser layout verification confirming equal side spacing, no page scroll, and working file-to-attachment-to-opened-log flow.
+
+### 2026-07-21
+
+- Pages/files changed: `events.html`, `SPRINT.md`
+- What changed: Removed the archive terminal intro paragraph and changed the Soma Inc. archive boot copyright line to `COPYRIGHT 2038 SOMA INC. ARCHIVE SERVER`.
+- Why it changed: The News & Events terminal needed cleaner on-screen copy and the requested Soma Inc. copyright year.
+- Validation done: Ran JavaScript syntax checks, whitespace diff check, and browser verification confirming the removed paragraph is no longer present and the copyright line shows 2038.
 
 ## Change-log format for future updates
 
