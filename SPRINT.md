@@ -39,6 +39,7 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Rebuilt News & Events as an interactive Fallout-style archive terminal with selectable files and attachments.
 - Updated the News & Events archive terminal to move one screen at a time from Files to Attachments to Opened Log, with Back navigation.
 - Recolored the News & Events archive terminal to match the Products page's dark teal, mint, and cyan Soma Inc. palette.
+- Added a live archive-terminal date/time display that uses today's real date, weekday, and time while showing the year as 2122.
 
 ## Backlog
 
@@ -94,6 +95,13 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - What changed: Updated the News & Events archive terminal colors and font imports to match the Products page's Eidolon-Frame look: deep teal/black panels, mint highlights, pale white-mint headings, and cyan-tinted glow.
 - Why it changed: The archive terminal needed to feel visually connected to the PRODUCT_01 // EIDOLON-FRAME product page instead of using a separate Fallout-green palette.
 - Validation done: Ran CSS/JavaScript checks, asset reference checks, and visual browser inspection of the recolored archive terminal.
+
+### 2026-07-21
+
+- Pages/files changed: `events.html`, `js/events-terminal.js`, `SPRINT.md`
+- What changed: Replaced the archive terminal's hardcoded status date with a live browser-based clock that displays today's real month, day, weekday, and time while forcing the story year to read `2122`.
+- Why it changed: The News & Events terminal needed to feel current and alive without breaking the future Soma Inc. timeline.
+- Validation done: Ran JavaScript syntax checks, whitespace diff check, and local browser verification of the live `2122` terminal clock.
 
 ## Change-log format for future updates
 

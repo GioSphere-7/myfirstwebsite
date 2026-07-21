@@ -152,6 +152,9 @@
   const archiveScreen = app.querySelector("[data-archive-screen]");
   const backButton = app.querySelector("[data-back-button]");
   const breadcrumb = app.querySelector("[data-archive-breadcrumb]");
+  const terminalTime = app.querySelector("[data-current-terminal-time]");
+  const terminalYear = 2122;
+  const terminalDays = ["SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY"];
   const archiveViews = {
     files: app.querySelector('[data-archive-view="files"]'),
     attachments: app.querySelector('[data-archive-view="attachments"]'),
@@ -188,6 +191,31 @@
     while (element.firstChild) {
       element.removeChild(element.firstChild);
     }
+  }
+
+  function padClockValue(value) {
+    return String(value).padStart(2, "0");
+  }
+
+  function updateTerminalClock() {
+    if (!terminalTime) {
+      return;
+    }
+
+    const now = new Date();
+    const month = padClockValue(now.getMonth() + 1);
+    const day = padClockValue(now.getDate());
+    const hours = padClockValue(now.getHours());
+    const minutes = padClockValue(now.getMinutes());
+    const seconds = padClockValue(now.getSeconds());
+
+    terminalTime.textContent = `> ${terminalYear}.${month}.${day} - ${terminalDays[now.getDay()]} - ${hours}:${minutes}:${seconds}`;
+    terminalTime.dateTime = `${terminalYear}-${month}-${day}T${hours}:${minutes}:${seconds}`;
+  }
+
+  function startTerminalClock() {
+    updateTerminalClock();
+    window.setInterval(updateTerminalClock, 1000);
   }
 
   function getActiveFile() {
@@ -589,4 +617,5 @@
 
   renderFiles();
   setView("files");
+  startTerminalClock();
 })();
