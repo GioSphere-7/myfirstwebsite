@@ -164,6 +164,10 @@
   let activeFileId = null;
   let activeAttachmentId = null;
   let activeAudio = null;
+  let mediaLightbox = null;
+  let mediaLightboxContent = null;
+  let mediaLightboxClose = null;
+  let previousLightboxFocus = null;
   let lastBackActionAt = 0;
 
   function stopActiveAudio() {
@@ -191,6 +195,150 @@
     while (element.firstChild) {
       element.removeChild(element.firstChild);
     }
+  }
+
+  function isMediaLightboxOpen() {
+    return Boolean(mediaLightbox && mediaLightbox.classList.contains("is-open"));
+  }
+
+  function createMediaLightbox() {
+    const lightbox = createElement("section", "archive-lightbox");
+    lightbox.hidden = true;
+    lightbox.setAttribute("aria-modal", "true");
+    lightbox.setAttribute("role", "dialog");
+    lightbox.setAttribute("aria-label", "Expanded archive media");
+
+    const panel = createElement("div", "archive-lightbox-panel");
+    const close = createElement("button", "archive-lightbox-close", "Close");
+    close.type = "button";
+    close.setAttribute("aria-label", "Close expanded media");
+
+    const content = createElement("div", "archive-lightbox-content");
+
+    close.addEventListener("click", closeMediaLightbox);
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) {
+        closeMediaLightbox();
+      }
+    });
+
+    panel.appendChild(close);
+    panel.appendChild(content);
+    lightbox.appendChild(panel);
+    document.body.appendChild(lightbox);
+
+    mediaLightbox = lightbox;
+    mediaLightboxContent = content;
+    mediaLightboxClose = close;
+
+    return lightbox;
+  }
+
+  function getMediaLightbox() {
+    if (!mediaLightbox) {
+      createMediaLightbox();
+    }
+
+    return mediaLightbox;
+  }
+
+  function closeMediaLightbox() {
+    if (!mediaLightbox) {
+      return;
+    }
+
+    mediaLightbox.classList.remove("is-open");
+    mediaLightbox.hidden = true;
+    document.body.classList.remove("archive-lightbox-open");
+
+    if (mediaLightboxContent) {
+      clearElement(mediaLightboxContent);
+    }
+
+    if (previousLightboxFocus) {
+      previousLightboxFocus.focus();
+      previousLightboxFocus = null;
+    }
+  }
+
+  function openMediaLightbox(media) {
+    const lightbox = getMediaLightbox();
+    const type = media.type || "image";
+
+    previousLightboxFocus = document.activeElement;
+    clearElement(mediaLightboxContent);
+
+    const frame = createElement("figure", "archive-lightbox-frame");
+    let mediaElement;
+
+    if (type === "video") {
+      stopActiveAudio();
+      mediaElement = document.createElement("video");
+      mediaElement.src = media.src;
+      mediaElement.controls = true;
+      mediaElement.autoplay = true;
+      mediaElement.playsInline = true;
+
+      if (media.poster) {
+        mediaElement.poster = media.poster;
+      }
+    } else {
+      mediaElement = document.createElement("img");
+      mediaElement.src = media.src;
+      mediaElement.alt = media.alt || media.title || "Expanded archive media.";
+    }
+
+    mediaElement.className = "archive-lightbox-media";
+    frame.appendChild(mediaElement);
+
+    if (media.title || media.description) {
+      const caption = createElement("figcaption", "archive-lightbox-caption");
+
+      if (media.title) {
+        caption.appendChild(createElement("strong", "", media.title));
+      }
+
+      if (media.description) {
+        caption.appendChild(createElement("span", "", media.description));
+      }
+
+      frame.appendChild(caption);
+    }
+
+    mediaLightboxContent.appendChild(frame);
+    lightbox.hidden = false;
+    lightbox.classList.add("is-open");
+    document.body.classList.add("archive-lightbox-open");
+    mediaLightboxClose.focus();
+  }
+
+  function createMediaTrigger(media) {
+    const button = createElement("button", "archive-media-trigger");
+    button.type = "button";
+    button.setAttribute("aria-label", `Open ${media.title || media.alt || "archive media"} in expanded view`);
+
+    let preview;
+
+    if (media.type === "video") {
+      preview = document.createElement("video");
+      preview.src = media.src;
+      preview.muted = true;
+      preview.preload = "metadata";
+
+      if (media.poster) {
+        preview.poster = media.poster;
+      }
+    } else {
+      preview = document.createElement("img");
+      preview.src = media.src;
+      preview.alt = media.alt || media.title || "Archive media preview.";
+    }
+
+    button.appendChild(preview);
+    button.appendChild(createElement("span", "archive-media-expand", "Open full view"));
+    button.addEventListener("click", () => openMediaLightbox(media));
+
+    return button;
   }
 
   function padClockValue(value) {
@@ -275,6 +423,7 @@
 
   function goBack() {
     const visibleView = archiveScreen.dataset.currentView || currentView;
+    closeMediaLightbox();
 
     if (visibleView === "viewer") {
       stopActiveAudio();
@@ -387,6 +536,7 @@
     }
 
     stopActiveAudio();
+    closeMediaLightbox();
     activeAttachmentId = attachment.id;
     renderAttachments(file);
     viewerType.textContent = attachment.type.toUpperCase();
@@ -405,6 +555,11 @@
 
     if (attachment.type === "image") {
       renderImageAttachment(attachment);
+      return;
+    }
+
+    if (attachment.type === "video") {
+      renderVideoAttachment(attachment);
       return;
     }
 
@@ -452,10 +607,13 @@
 
     const strip = createElement("div", "archive-comic-strip");
     attachment.images.forEach((image) => {
-      const img = document.createElement("img");
-      img.src = image.src;
-      img.alt = image.alt;
-      strip.appendChild(img);
+      strip.appendChild(createMediaTrigger({
+        type: "image",
+        src: image.src,
+        alt: image.alt,
+        title: attachment.title,
+        description: image.caption || attachment.caption
+      }));
     });
 
     wrapper.appendChild(strip);
@@ -464,16 +622,36 @@
 
   function renderImageAttachment(attachment) {
     const figure = createElement("figure", "archive-image-attachment");
-    const img = document.createElement("img");
-    img.src = attachment.src;
-    img.alt = attachment.alt;
-    figure.appendChild(img);
+    figure.appendChild(createMediaTrigger({
+      type: "image",
+      src: attachment.src,
+      alt: attachment.alt,
+      title: attachment.title,
+      description: attachment.caption
+    }));
 
     const caption = createElement("figcaption", "");
     caption.appendChild(createElement("strong", "", attachment.title));
     caption.appendChild(createElement("span", "", attachment.caption));
     figure.appendChild(caption);
     viewer.appendChild(figure);
+  }
+
+  function renderVideoAttachment(attachment) {
+    const wrapper = createElement("div", "archive-video");
+    wrapper.appendChild(createElement("h3", "", attachment.title));
+    wrapper.appendChild(createElement("p", "archive-caption", attachment.caption || "Recovered visual archive stream."));
+
+    wrapper.appendChild(createMediaTrigger({
+      type: "video",
+      src: attachment.src,
+      poster: attachment.poster,
+      title: attachment.title,
+      description: attachment.caption || attachment.description,
+      alt: attachment.title
+    }));
+
+    viewer.appendChild(wrapper);
   }
 
   function renderAudioAttachment(attachment) {
@@ -600,6 +778,12 @@
   document.addEventListener("keydown", (event) => {
     const activeTag = document.activeElement?.tagName;
     const isTyping = activeTag === "INPUT" || activeTag === "TEXTAREA";
+
+    if (event.key === "Escape" && isMediaLightboxOpen()) {
+      event.preventDefault();
+      closeMediaLightbox();
+      return;
+    }
 
     if (isTyping) {
       return;

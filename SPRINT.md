@@ -43,6 +43,7 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Fit the News & Events archive terminal to the visible screen so the page itself no longer needs scrolling.
 - Centered and narrowed the News & Events archive terminal into a more square monitor shape with side spacing similar to the Products page.
 - Removed the News & Events archive terminal intro paragraph and changed the Soma Inc. terminal copyright year to 2038.
+- Added clickable opened-log media previews with an enlarged terminal-style viewer and translucent description overlay.
 
 ## Backlog
 
@@ -126,6 +127,13 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - What changed: Removed the archive terminal intro paragraph and changed the Soma Inc. archive boot copyright line to `COPYRIGHT 2038 SOMA INC. ARCHIVE SERVER`.
 - Why it changed: The News & Events terminal needed cleaner on-screen copy and the requested Soma Inc. copyright year.
 - Validation done: Ran JavaScript syntax checks, whitespace diff check, and browser verification confirming the removed paragraph is no longer present and the copyright line shows 2038.
+
+### 2026-07-21
+
+- Pages/files changed: `events.html`, `css/style.css`, `js/events-terminal.js`, `SPRINT.md`
+- What changed: Made opened-log media previews clickable. Comic panels, schematic photos, and future video attachments now open in an enlarged terminal-style viewer with a translucent title/description box over the media when written context exists.
+- Why it changed: Users needed to inspect archive photos/videos more clearly without leaving the archive terminal flow.
+- Validation done: Ran JavaScript syntax checks, whitespace diff check, and browser tests for opening and closing enlarged schematic media from the Opened Log screen.
 
 ## Change-log format for future updates
 
