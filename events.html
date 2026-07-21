@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/search.js" defer></script>
     <script src="js/account.js" defer></script>
-    <script src="js/events-terminal.js" defer></script>
+    <script src="js/events-terminal.js?v=terminal-flow-4" defer></script>
 </head>
 
 <body class="events">
@@ -77,11 +77,16 @@
                 <div class="archive-intro">
                     <p class="archive-kicker">Property of Soma Inc. // News & Events</p>
                     <h1 id="archive-title">Archive Terminal</h1>
-                    <p>Select a file log to view its attachments. Open an attachment to load newspaper clippings, comic strips, schematic documents, and audio transmissions recovered from the Soma Inc. archive.</p>
+                    <p>Select a file log to enter its attachment directory. Open one attachment at a time to load newspaper clippings, comic strips, schematic documents, and audio transmissions recovered from the Soma Inc. archive.</p>
                 </div>
 
-                <div class="archive-grid">
-                    <aside class="archive-panel archive-files" id="archive-files" aria-labelledby="files-title">
+                <div class="archive-terminal-nav" aria-label="Archive terminal navigation">
+                    <button type="button" class="archive-back" data-back-button disabled onclick="window.somaArchiveBack && window.somaArchiveBack(event)" onpointerup="window.somaArchiveBack && window.somaArchiveBack(event)">&lt; BACK</button>
+                    <p class="archive-breadcrumb" data-archive-breadcrumb>FILES</p>
+                </div>
+
+                <div class="archive-grid" data-archive-screen>
+                    <aside class="archive-panel archive-files" id="archive-files" data-archive-view="files" aria-labelledby="files-title">
                         <div class="archive-panel-title">
                             <h2 id="files-title">[FILES]</h2>
                             <span data-file-count>0 items</span>
@@ -89,16 +94,16 @@
                         <div class="archive-list" data-file-list></div>
                     </aside>
 
-                    <aside class="archive-panel archive-attachments" aria-labelledby="attachments-title">
+                    <aside class="archive-panel archive-attachments" data-archive-view="attachments" aria-labelledby="attachments-title" hidden>
                         <div class="archive-panel-title">
                             <h2 id="attachments-title">[ATTACHMENTS]</h2>
                             <span data-attachment-count>Select file</span>
                         </div>
-                        <p class="archive-instruction" data-file-summary>Choose a file on the left to display its contained attachments.</p>
+                        <p class="archive-instruction" data-file-summary>Choose a file to display its contained attachments.</p>
                         <div class="archive-list" data-attachment-list></div>
                     </aside>
 
-                    <section class="archive-panel archive-viewer" aria-labelledby="viewer-title">
+                    <section class="archive-panel archive-viewer" data-archive-view="viewer" aria-labelledby="viewer-title" hidden>
                         <div class="archive-panel-title">
                             <h2 id="viewer-title">[OPENED LOG]</h2>
                             <span data-viewer-type>Idle</span>
@@ -111,9 +116,9 @@
                 </div>
 
                 <div class="archive-footer">
-                    <span>[TAB] CHANGE COLUMN</span>
+                    <span>[CLICK] SELECT ENTRY</span>
                     <span>[ENTER] OPEN SELECTED</span>
-                    <span>[R] LOAD ARCHIVE</span>
+                    <span>[BACKSPACE] PREVIOUS SCREEN</span>
                 </div>
             </div>
         </div>

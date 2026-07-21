@@ -863,6 +863,7 @@ padding-top: 18vw;
 .archive-boot,
 .archive-status,
 .archive-intro,
+.archive-terminal-nav,
 .archive-grid,
 .archive-footer {
     position: relative;
@@ -932,21 +933,108 @@ padding-top: 18vw;
     line-height: 1.7;
 }
 
+.archive-terminal-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 0 0 16px;
+    border: 1px solid rgba(126, 255, 122, 0.28);
+    background: rgba(0, 12, 4, 0.52);
+    box-shadow:
+        inset 0 0 18px rgba(56, 255, 72, 0.045),
+        0 0 14px rgba(54, 255, 64, 0.06);
+}
+
+.archive-back {
+    flex: 0 0 auto;
+    min-width: 182px;
+    border: 0;
+    border-right: 1px solid rgba(126, 255, 122, 0.28);
+    padding: 13px 16px;
+    color: #061106;
+    background:
+        linear-gradient(90deg, rgba(38, 255, 55, 0.96), rgba(42, 255, 64, 0.72)),
+        #46ff4f;
+    font-family: "Courier New", Consolas, monospace;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-align: left;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.archive-back:not(:disabled):hover,
+.archive-back:not(:disabled):focus-visible {
+    outline: 0;
+    background: #d8ffd0;
+    box-shadow:
+        0 0 18px rgba(44, 255, 50, 0.45),
+        inset 0 0 10px rgba(255, 255, 255, 0.24);
+}
+
+.archive-back:disabled {
+    color: rgba(130, 255, 124, 0.36);
+    background: rgba(0, 0, 0, 0.12);
+    cursor: not-allowed;
+}
+
+.archive-breadcrumb {
+    flex: 1 1 auto;
+    margin: 0;
+    padding: 12px 16px;
+    overflow: hidden;
+    color: #c8ffc0;
+    font-size: clamp(0.82rem, 1.25vw, 1rem);
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-align: right;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
 .archive-grid {
-    display: grid;
-    grid-template-columns: minmax(220px, 0.82fr) minmax(240px, 0.9fr) minmax(340px, 1.55fr);
-    gap: 18px;
-    align-items: stretch;
+    position: relative;
+    min-height: 560px;
+    overflow: hidden;
 }
 
 .archive-panel {
+    display: none;
     min-width: 0;
+    min-height: 560px;
     border: 1px solid rgba(126, 255, 122, 0.28);
     border-radius: 6px;
     background: rgba(0, 9, 4, 0.52);
     box-shadow:
         inset 0 0 26px rgba(56, 255, 72, 0.055),
         0 0 20px rgba(54, 255, 64, 0.08);
+}
+
+.archive-panel.is-view-active {
+    display: block;
+    animation: archive-page-enter 0.28s steps(6, end);
+}
+
+@keyframes archive-page-enter {
+    0% {
+        opacity: 0;
+        transform: translateX(18px);
+        filter: blur(2px);
+    }
+
+    55% {
+        opacity: 0.75;
+        transform: translateX(-4px);
+        filter: blur(1px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
 }
 
 .archive-panel-title {
@@ -978,6 +1066,11 @@ padding-top: 18vw;
     display: grid;
     gap: 8px;
     padding: 12px;
+}
+
+.archive-files .archive-list,
+.archive-attachments .archive-list {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .archive-instruction {
@@ -1308,11 +1401,7 @@ padding-top: 18vw;
 
 @media (max-width: 1080px) {
     .archive-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .archive-viewer {
-        grid-column: 1 / -1;
+        min-height: 520px;
     }
 
     .archive-output {
@@ -1337,7 +1426,7 @@ padding-top: 18vw;
     }
 
     .archive-grid {
-        grid-template-columns: 1fr;
+        min-height: 0;
     }
 
     .archive-panel-title {
@@ -1348,6 +1437,22 @@ padding-top: 18vw;
     .archive-output {
         min-height: 360px;
         padding: 14px;
+    }
+
+    .archive-terminal-nav {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .archive-back {
+        width: 100%;
+        border-right: 0;
+        border-bottom: 1px solid rgba(126, 255, 122, 0.28);
+    }
+
+    .archive-breadcrumb {
+        text-align: left;
+        white-space: normal;
     }
 }
 

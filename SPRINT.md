@@ -37,6 +37,7 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Fixed navbar clickability on the Products page.
 - Fixed Products page alignment where old `#eframe` and `#sctitle` CSS offsets made the page illegible.
 - Rebuilt News & Events as an interactive Fallout-style archive terminal with selectable files and attachments.
+- Updated the News & Events archive terminal to move one screen at a time from Files to Attachments to Opened Log, with Back navigation.
 
 ## Backlog
 
@@ -78,6 +79,13 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - What changed: Replaced the static News & Events image layout with an interactive archive terminal. Users can select file logs, view contained attachments, and open newspaper clippings, comic strips, schematic images, and simulated audio logs.
 - Why it changed: The page needed to feel like a Fallout-style console / save-log system instead of a static document page.
 - Validation done: Ran JavaScript syntax checks, whitespace diff check, local asset reference check, and live browser smoke tests for file selection, comic loading, clipping loading, and audio playback toggle.
+
+### 2026-07-21
+
+- Pages/files changed: `events.html`, `css/style.css`, `js/events-terminal.js`, `SPRINT.md`
+- What changed: Converted the archive terminal from a three-column layout into a step-by-step screen flow. Users now move from Files to Attachments to Opened Log one page at a time, with a Back button and breadcrumb trail for returning to the previous screen.
+- Why it changed: The archive needed to feel more like a terminal/save-log interface where each selection opens a new screen instead of exposing every panel at once.
+- Validation done: Ran JavaScript syntax checks, whitespace diff check, asset reference check, and live browser tests for Files → Attachments → Opened Log → Back → Back.
 
 ## Change-log format for future updates
 

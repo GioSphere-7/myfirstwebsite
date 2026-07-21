@@ -149,9 +149,19 @@
   const attachmentCount = app.querySelector("[data-attachment-count]");
   const fileSummary = app.querySelector("[data-file-summary]");
   const viewerType = app.querySelector("[data-viewer-type]");
+  const archiveScreen = app.querySelector("[data-archive-screen]");
+  const backButton = app.querySelector("[data-back-button]");
+  const breadcrumb = app.querySelector("[data-archive-breadcrumb]");
+  const archiveViews = {
+    files: app.querySelector('[data-archive-view="files"]'),
+    attachments: app.querySelector('[data-archive-view="attachments"]'),
+    viewer: app.querySelector('[data-archive-view="viewer"]')
+  };
+  let currentView = "files";
   let activeFileId = null;
   let activeAttachmentId = null;
   let activeAudio = null;
+  let lastBackActionAt = 0;
 
   function stopActiveAudio() {
     if (activeAudio) {
@@ -180,6 +190,90 @@
     }
   }
 
+  function getActiveFile() {
+    return archiveFiles.find((entry) => entry.id === activeFileId) || null;
+  }
+
+  function getActiveAttachment() {
+    const file = getActiveFile();
+
+    if (!file) {
+      return null;
+    }
+
+    return file.attachments.find((entry) => entry.id === activeAttachmentId) || null;
+  }
+
+  function buildBreadcrumb() {
+    const file = getActiveFile();
+    const attachment = getActiveAttachment();
+
+    if (currentView === "attachments" && file) {
+      return `FILES > ${file.label} > ATTACHMENTS`;
+    }
+
+    if (currentView === "viewer" && file && attachment) {
+      return `FILES > ${file.label} > ${attachment.label}`;
+    }
+
+    return "FILES";
+  }
+
+  function setView(viewName) {
+    currentView = viewName;
+
+    Object.entries(archiveViews).forEach(([name, element]) => {
+      const isActive = name === currentView;
+      element.hidden = !isActive;
+      element.classList.toggle("is-view-active", isActive);
+      element.setAttribute("aria-hidden", String(!isActive));
+    });
+
+    archiveScreen.dataset.currentView = currentView;
+    breadcrumb.textContent = buildBreadcrumb();
+    backButton.disabled = currentView === "files";
+
+    if (currentView === "attachments") {
+      backButton.textContent = "< BACK TO FILES";
+      backButton.setAttribute("aria-label", "Back to file list");
+    } else if (currentView === "viewer") {
+      backButton.textContent = "< BACK TO ATTACHMENTS";
+      backButton.setAttribute("aria-label", "Back to attachments");
+    } else {
+      backButton.textContent = "< BACK";
+      backButton.setAttribute("aria-label", "Already on file list");
+    }
+  }
+
+  function goBack() {
+    const visibleView = archiveScreen.dataset.currentView || currentView;
+
+    if (visibleView === "viewer") {
+      stopActiveAudio();
+      setView("attachments");
+      return;
+    }
+
+    if (visibleView === "attachments") {
+      stopActiveAudio();
+      setView("files");
+    }
+  }
+
+  function handleBackAction(event) {
+    const now = Date.now();
+
+    if (backButton.disabled || now - lastBackActionAt < 160) {
+      return;
+    }
+
+    event.preventDefault();
+    lastBackActionAt = now;
+    goBack();
+  }
+
+  window.somaArchiveBack = handleBackAction;
+
   function renderFiles() {
     clearElement(fileList);
     fileCount.textContent = `${archiveFiles.length} files`;
@@ -198,7 +292,9 @@
       }
 
       button.addEventListener("click", () => {
-        selectFile(file.id);
+        window.setTimeout(() => {
+          selectFile(file.id);
+        }, 80);
       });
 
       fileList.appendChild(button);
@@ -218,6 +314,7 @@
     renderFiles();
     renderAttachments(file);
     renderFilePrompt(file);
+    setView("attachments");
   }
 
   function renderAttachments(file) {
@@ -239,7 +336,9 @@
       }
 
       button.addEventListener("click", () => {
-        openAttachment(file.id, attachment.id);
+        window.setTimeout(() => {
+          openAttachment(file.id, attachment.id);
+        }, 80);
       });
 
       attachmentList.appendChild(button);
@@ -264,6 +363,7 @@
     renderAttachments(file);
     viewerType.textContent = attachment.type.toUpperCase();
     clearElement(viewer);
+    setView("viewer");
 
     if (attachment.type === "clipping") {
       renderClipping(attachment);
@@ -292,7 +392,7 @@
     const prompt = createElement("div", "archive-directory-prompt");
     prompt.appendChild(createElement("p", "archive-output-line", `> FILE LOADED: ${file.label}`));
     prompt.appendChild(createElement("p", "archive-output-line", `> ATTACHMENTS FOUND: ${file.attachments.length}`));
-    prompt.appendChild(createElement("p", "archive-output-line", "> Select an attachment from the center column to open it."));
+    prompt.appendChild(createElement("p", "archive-output-line", "> Select an attachment from the attachment screen to open it."));
 
     const manifest = createElement("ul", "archive-manifest");
     file.attachments.forEach((attachment) => {
@@ -466,6 +566,27 @@
     return { stop };
   }
 
+  backButton.addEventListener("click", handleBackAction);
+  backButton.addEventListener("pointerup", handleBackAction);
+
+  document.addEventListener("keydown", (event) => {
+    const activeTag = document.activeElement?.tagName;
+    const isTyping = activeTag === "INPUT" || activeTag === "TEXTAREA";
+
+    if (isTyping) {
+      return;
+    }
+
+    if ((event.key === "Backspace" || event.key === "Escape") && currentView !== "files") {
+      event.preventDefault();
+      goBack();
+    }
+
+    if ((event.key === "Enter" || event.key === " ") && document.activeElement === backButton) {
+      handleBackAction(event);
+    }
+  });
+
   renderFiles();
-  selectFile(archiveFiles[0].id);
+  setView("files");
 })();
