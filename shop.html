@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop | SOMAINC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&family=Orbitron:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/search.js" defer></script>
     <script src="js/account.js" defer></script>
@@ -21,9 +24,8 @@
         <li>
             <a href="events.html">News & Events</a>
             <div class="dropdown-menu">
-                <a href="event.html">Documents</a>
-                <!-- <a href="#">Articles</a>
-                <a href="#">Events</a> -->
+                <a href="events.html#event-terminal">Archive Terminal</a>
+                <a href="events.html#archive-files">File Logs</a>
             </div>
         </li>
         <li>
@@ -31,18 +33,13 @@
             <div class="dropdown-menu">
                 <a href="prod.html#eframe">Eidolon-Frame</a>
                 <a href="prod.html#sctitle">SomaCloud</a>
-                <!-- <a href="#">SomaLink</a> -->
             </div>
         </li>
         <li>
             <a href="shop.html">Shop</a>
             <div class="dropdown-menu">
                 <a href="shop.html#eidolon-models">Eidolon-Frames</a>
-                <a href="shop.html#eidolon-parts">Frame Components</a>
-                <a href="shop.html#eidolon-accessories">Body Adaptations</a>
-                <a href="shop.html#eidolon-repairs">Recovery Systems</a>
-                <a href="shop.html#eidolon-upgrades">Human Advancements</a>
-                <a href="shop.html#soma-services">SomaCloud & Somalink</a>
+                <a href="shop.html#eidolon-parts">Parts</a>
             </div>
         </li>
     </ul>
@@ -51,9 +48,9 @@
     <div class="filler"></div>
     <div class="nav-right">
         <form class="search-bar" role="search" data-site-search>
-            <label class="sr-only" for="site-search">Search Soma Inc.</label>
-            <input id="site-search" type="search" name="q" placeholder="Search Soma..." autocomplete="off">
-            <button type="submit" aria-label="Search Soma Inc.">&#128269;</button>
+            <label class="sr-only" for="site-search">Search the site</label>
+            <input id="site-search" type="search" name="q" placeholder="Search..." autocomplete="off">
+            <button type="submit" aria-label="Search">&#128269;</button>
             <span class="search-status" data-search-status role="status" aria-live="polite"></span>
         </form>
         <a href="purchase-history.html" aria-label="View purchase history"><img src="images/cart.png" width="30" alt=""></a>

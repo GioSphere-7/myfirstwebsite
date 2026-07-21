@@ -44,6 +44,7 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Centered and narrowed the News & Events archive terminal into a more square monitor shape with side spacing similar to the Products page.
 - Removed the News & Events archive terminal intro paragraph and changed the Soma Inc. terminal copyright year to 2038.
 - Added clickable opened-log media previews with an enlarged terminal-style viewer and translucent description overlay.
+- Standardized the navigation bar across all main pages using the Home page layout and typography.
 
 ## Backlog
 
@@ -134,6 +135,13 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - What changed: Made opened-log media previews clickable. Comic panels, schematic photos, and future video attachments now open in an enlarged terminal-style viewer with a translucent title/description box over the media when written context exists.
 - Why it changed: Users needed to inspect archive photos/videos more clearly without leaving the archive terminal flow.
 - Validation done: Ran JavaScript syntax checks, whitespace diff check, and browser tests for opening and closing enlarged schematic media from the Opened Log screen.
+
+### 2026-07-21
+
+- Pages/files changed: `index.html`, `events.html`, `prod.html`, `shop.html`, `account.html`, `purchase-history.html`, `css/style.css`, `SPRINT.md`
+- What changed: Standardized the navbar markup, dropdown labels, search placeholder, cart/account icons, and Home page typography treatment across all main pages. Fixed old News dropdown links that still pointed to `event.html`.
+- Why it changed: The navigation bar needed to remain visually and structurally consistent between pages while preserving the Home page format.
+- Validation done: Ran JavaScript syntax checks, whitespace diff check, local nav consistency checks, and browser checks across the main pages.
 
 ## Change-log format for future updates
 

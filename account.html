@@ -5,40 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account | SOMAINC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&family=Orbitron:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/search.js" defer></script>
     <script src="js/account.js" defer></script>
 </head>
 <body class="account-page">
   <header>
-    <nav class="navbar">
-      <div class="filler"></div>
-      <a href="index.html" class="logo"><img src="images/logo.png" width="110" alt="Soma Inc. home"></a>
-      <ul>
+  <!-- NAVBAR CODE-->
+  <nav class="navbar">
+    <div class="filler"></div>
+    <a href="index.html" class="logo"> <img src="images/logo.png" width="110" alt=""></a>
+    <ul>
         <div class="filler"></div>
-        <li><a href="events.html">News & Events</a></li>
         <li>
-          <a href="prod.html">Products</a>
-          <div class="dropdown-menu">
-            <a href="prod.html#eframe">Eidolon-Frame</a>
-            <a href="prod.html#sctitle">SomaCloud</a>
-          </div>
+            <a href="events.html">News & Events</a>
+            <div class="dropdown-menu">
+                <a href="events.html#event-terminal">Archive Terminal</a>
+                <a href="events.html#archive-files">File Logs</a>
+            </div>
         </li>
-        <li><a href="shop.html">Shop</a></li>
-      </ul>
-      <div class="filler"></div>
-      <div class="nav-right">
+        <li>
+            <a href="prod.html">Products</a>
+            <div class="dropdown-menu">
+                <a href="prod.html#eframe">Eidolon-Frame</a>
+                <a href="prod.html#sctitle">SomaCloud</a>
+            </div>
+        </li>
+        <li>
+            <a href="shop.html">Shop</a>
+            <div class="dropdown-menu">
+                <a href="shop.html#eidolon-models">Eidolon-Frames</a>
+                <a href="shop.html#eidolon-parts">Parts</a>
+            </div>
+        </li>
+    </ul>
+    <div class="filler"></div>
+    <div class="filler"></div>
+    <div class="filler"></div>
+    <div class="nav-right">
         <form class="search-bar" role="search" data-site-search>
-          <label class="sr-only" for="site-search">Search the site</label>
-          <input id="site-search" type="search" name="q" placeholder="Search..." autocomplete="off">
-          <button type="submit" aria-label="Search">&#128269;</button>
-          <span class="search-status" data-search-status role="status" aria-live="polite"></span>
+            <label class="sr-only" for="site-search">Search the site</label>
+            <input id="site-search" type="search" name="q" placeholder="Search..." autocomplete="off">
+            <button type="submit" aria-label="Search">&#128269;</button>
+            <span class="search-status" data-search-status role="status" aria-live="polite"></span>
         </form>
         <a href="purchase-history.html" aria-label="View purchase history"><img src="images/cart.png" width="30" alt=""></a>
         <a href="account.html" class="account-link" data-account-link aria-label="Account"><img src="images/login.png" width="30" alt=""></a>
-      </div>
-      <div class="filler"></div>
-    </nav>
+    </div>
+    <div class="filler"></div>
+  </nav>
   </header>
 
   <main class="account-shell">
