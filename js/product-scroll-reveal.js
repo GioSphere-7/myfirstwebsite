@@ -20,6 +20,11 @@
     ".terminal-card p",
     ".terminal-list li"
   ].join(", ");
+  const stableHeadingSelector = [
+    ".terminal-kicker",
+    ".terminal-panel > h2",
+    ".terminal-hero > h1"
+  ].join(", ");
   const textRevealData = new WeakMap();
   const runningAnimations = new WeakMap();
   const resetTimers = new WeakMap();
@@ -168,8 +173,14 @@
       element.style.minHeight = `${Math.ceil(elementHeight)}px`;
     }
 
-    element.classList.add("console-reveal", "console-text-reveal");
+    element.classList.add("console-reveal");
     element.style.setProperty("--console-delay", `${Math.min(index * 34, 520)}ms`);
+
+    if (element.matches(stableHeadingSelector)) {
+      return;
+    }
+
+    element.classList.add("console-text-reveal");
 
     const revealData = {
       delay: Math.min(index * 34, 520),

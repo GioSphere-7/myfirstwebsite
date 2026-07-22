@@ -50,6 +50,7 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Matched the Products carousel frame to the News & Events archive terminal size and casing for stronger page-to-page consistency.
 - Centered the Products carousel dots between the up/down arrows in a single right-side control rail.
 - Added click-to-enlarge behavior for Products page schematic and SomaCloud images.
+- Fixed Products carousel slide alignment so hash-loaded slides do not animate upward and top labels/headings remain immediately legible.
 
 ## Backlog
 
@@ -182,6 +183,13 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - What changed: Added a product-image lightbox so users can click the Products page schematic and SomaCloud images to open a larger terminal-style viewer with a caption and Close control.
 - Why it changed: Product imagery needed to be easier to inspect without leaving the carousel or breaking the Products page terminal experience.
 - Validation done: Ran JavaScript syntax checks, whitespace diff check, verified all four product images are expandable/focusable, browser-tested opening and closing the active Eidolon image, confirmed the carousel stayed on `#eframe`, and checked for product-page console errors.
+
+### 2026-07-22
+
+- Pages/files changed: `prod.html`, `css/style.css`, `js/product-vertical-carousel.js`, `js/product-scroll-reveal.js`, `SPRINT.md`
+- What changed: Added safe vertical spacing to Products carousel slides, disabled the initial animated jump when opening hash links like `#eframe`, cache-busted the updated product scripts, and kept slide labels/headings fully visible instead of type-clipping them.
+- Why it changed: The Products carousel pages appeared pushed upward on load and the top product label/heading could look clipped or illegible while the carousel and typewriter effects initialized.
+- Validation done: Ran JavaScript syntax checks, whitespace diff check, short-viewport and normal-viewport browser checks, verified all eight slides have safe top spacing and zero overflow, tested next-slide navigation, tested product image enlargement, and confirmed no website console errors.
 
 ## Change-log format for future updates
 

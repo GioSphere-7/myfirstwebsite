@@ -54,6 +54,11 @@
 
   function updateCarousel(nextIndex, options = {}) {
     const boundedIndex = Math.min(Math.max(nextIndex, 0), slides.length - 1);
+    const isImmediateJump = Boolean(options.immediate);
+
+    if (isImmediateJump) {
+      track.classList.add("is-jump-immediate");
+    }
 
     currentIndex = boundedIndex;
     track.style.setProperty("--product-slide-index", String(currentIndex));
@@ -90,6 +95,12 @@
         slide: activeSlide
       }
     }));
+
+    if (isImmediateJump) {
+      requestAnimationFrame(() => {
+        track.classList.remove("is-jump-immediate");
+      });
+    }
   }
 
   function goToSlide(nextIndex) {
@@ -208,5 +219,8 @@
   buildDots();
 
   const initialIndex = getSlideIndexFromHash();
-  updateCarousel(initialIndex >= 0 ? initialIndex : 0, { keepHash: true });
+  updateCarousel(initialIndex >= 0 ? initialIndex : 0, {
+    immediate: true,
+    keepHash: true
+  });
 })();
