@@ -53,6 +53,7 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Fixed Products carousel slide alignment so hash-loaded slides do not animate upward and top labels/headings remain immediately legible.
 - Fixed the Products dropdown SomaCloud link so it loads the SomaCloud carousel slide without hidden terminal-screen scrolling.
 - Fixed Home carousel text formatting so the first slide paragraph no longer clips and the Somacloud / Eidolon copy no longer overlaps.
+- Repositioned the Home Eidolon-frame hero so its arm separates the title from the paragraph and restyled the Home carousel controls to match the Products control rail.
 
 ## Backlog
 
@@ -206,6 +207,13 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - What changed: Rebuilt the Home carousel slide spacing with grid-based layouts, kept the Home navbar links from wrapping at the preview width, moved the Eidolon-frame hero/text presentation higher, placed the first paragraph under the arm without clipping, separated the Somacloud and Eidolon slide text blocks, and centered the Home carousel arrow controls beside the dots.
 - Why it changed: The Home page carousel text was overlapping itself, the first slide paragraph was being cut off, and the visual controls were not sitting cleanly in the carousel rail.
 - Validation done: Ran whitespace diff checks and live browser previews for Home slide 1 and slide 2, confirming slide 1 has safe headline-to-paragraph spacing, the paragraph fits inside the viewport, slide 2 text blocks have a visible gap, and the navbar remains single-line at the app preview width.
+
+### 2026-07-22
+
+- Pages/files changed: `index.html`, `css/style.css`, `SPRINT.md`
+- What changed: Repositioned the Home Eidolon-frame image and first-slide text so the outstretched arm reads as the divider between the title and paragraph, converted the Home carousel controls into the same arrow/dot/arrow rail structure used by the Products carousel, restyled the Home arrows and dots with the Products terminal colors, and added spacing safeguards to the Products carousel control rail.
+- Why it changed: The Home hero arm was still visually colliding with the paragraph, and the carousel arrows/dots needed to look consistent and avoid overlap.
+- Validation done: Ran whitespace diff checks, verified the Home carousel markup uses one shared control rail, confirmed the local server returns `200`, and completed a live Home preview before the final paragraph nudge showing the Products-style rail with clean arrow-to-dot spacing.
 
 ## Change-log format for future updates
 
