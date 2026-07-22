@@ -48,6 +48,7 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Restored the full Shop dropdown category list across all main pages.
 - Converted the Products page into a vertical terminal carousel with console-style text/image reveal effects.
 - Matched the Products carousel frame to the News & Events archive terminal size and casing for stronger page-to-page consistency.
+- Centered the Products carousel dots between the up/down arrows in a single right-side control rail.
 
 ## Backlog
 
@@ -166,6 +167,13 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - What changed: Wrapped the Products vertical carousel in an archive-terminal-style shell, bezel, and screen so it takes up the same centered 940×700 terminal footprint as the News & Events archive while preserving slide controls, dots, URL anchors, and console-style reveal behavior.
 - Why it changed: The Products page needed to feel visually consistent with the News & Events archive terminal without losing the vertical carousel interaction.
 - Validation done: Matched the Products shell, bezel, and screen measurements against the News & Events terminal in the local browser, confirmed all eight slides fit without overflow, tested next/previous controls and `#sctitle` anchor routing, and verified no product-page console errors.
+
+### 2026-07-22
+
+- Pages/files changed: `prod.html`, `css/style.css`, `SPRINT.md`
+- What changed: Moved the Products carousel dots into the same control rail as the arrows so the up arrow sits above the dot column and the down arrow sits below it.
+- Why it changed: The carousel controls needed to feel visually centered and intentional instead of having the arrow buttons and dots separated into two offset groups.
+- Validation done: Ran JavaScript syntax checks, whitespace diff check, HTML order check, and browser coordinate verification confirming the arrows and dots share the same center line with the dots bracketed between the buttons.
 
 ## Change-log format for future updates
 

@@ -932,7 +932,9 @@ padding-top: 18vw;
     z-index: 2900;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(12px, 2vh, 18px);
     transform: translateY(-50%);
 }
 
@@ -976,12 +978,11 @@ padding-top: 18vw;
 }
 
 .product-carousel-dots {
-    position: absolute;
-    right: clamp(21px, 3vw, 35px);
-    top: calc(50% + 120px);
-    z-index: 2900;
+    position: static;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 9px;
 }
 
@@ -1150,10 +1151,6 @@ padding-top: 18vw;
     }
 
     .product-carousel-dots {
-        right: auto;
-        left: 18px;
-        top: auto;
-        bottom: 29px;
         flex-direction: row;
     }
 
