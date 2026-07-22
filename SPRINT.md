@@ -2,7 +2,7 @@
 
 This file is the working sprint tracker for the Soma Inc. website. Moving forward, update this list whenever the website changes so the project history, current focus, and next priorities stay easy to follow.
 
-Last updated: 2026-07-21
+Last updated: 2026-07-22
 
 ## Current sprint: Site polish and user-flow stability
 
@@ -46,6 +46,8 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Added clickable opened-log media previews with an enlarged terminal-style viewer and translucent description overlay.
 - Standardized the navigation bar across all main pages using the Home page layout and typography.
 - Restored the full Shop dropdown category list across all main pages.
+- Converted the Products page into a vertical terminal carousel with console-style text/image reveal effects.
+- Matched the Products carousel frame to the News & Events archive terminal size and casing for stronger page-to-page consistency.
 
 ## Backlog
 
@@ -150,6 +152,20 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - What changed: Restored the full Shop dropdown category list: Eidolon-Frames, Frame Components, Body Adaptations, Recovery Systems, Human Advancements, and SomaCloud & Somalink.
 - Why it changed: The Shop navigation needed the fuller category list back while keeping the Home page navbar format consistent across the website.
 - Validation done: Ran JavaScript syntax checks, whitespace diff check, local nav consistency checks, and browser verification that every restored Shop dropdown link appears on each main page and points to an existing Shop section.
+
+### 2026-07-21
+
+- Pages/files changed: `prod.html`, `css/style.css`, `js/product-vertical-carousel.js`, `js/product-scroll-reveal.js`, `SPRINT.md`
+- What changed: Converted the Products page into an eight-slide vertical terminal carousel while preserving the existing Soma Inc. product-page look. Added Home-style up/down controls, slide dots, mouse-wheel navigation, keyboard navigation, product-anchor support, and console-style text/image reveal behavior on each active slide.
+- Why it changed: The Products page needed to feel like the Home carousel, but vertical and still styled like a retro Soma Inc. product archive.
+- Validation done: Ran JavaScript syntax checks, whitespace diff check, browser console check, slide overflow checks, and local preview smoke tests for wheel navigation, keyboard navigation, `#eframe` / `#sctitle` anchor routing, slide dots, fade/typing activation, and image reveal setup. GitHub push is intentionally pending until preview approval.
+
+### 2026-07-22
+
+- Pages/files changed: `prod.html`, `css/style.css`, `js/product-vertical-carousel.js`, `js/product-scroll-reveal.js`, `SPRINT.md`
+- What changed: Wrapped the Products vertical carousel in an archive-terminal-style shell, bezel, and screen so it takes up the same centered 940×700 terminal footprint as the News & Events archive while preserving slide controls, dots, URL anchors, and console-style reveal behavior.
+- Why it changed: The Products page needed to feel visually consistent with the News & Events archive terminal without losing the vertical carousel interaction.
+- Validation done: Matched the Products shell, bezel, and screen measurements against the News & Events terminal in the local browser, confirmed all eight slides fit without overflow, tested next/previous controls and `#sctitle` anchor routing, and verified no product-page console errors.
 
 ## Change-log format for future updates
 
