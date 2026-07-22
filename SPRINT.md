@@ -52,6 +52,7 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Added click-to-enlarge behavior for Products page schematic and SomaCloud images.
 - Fixed Products carousel slide alignment so hash-loaded slides do not animate upward and top labels/headings remain immediately legible.
 - Fixed the Products dropdown SomaCloud link so it loads the SomaCloud carousel slide without hidden terminal-screen scrolling.
+- Fixed Home carousel text formatting so the first slide paragraph no longer clips and the Somacloud / Eidolon copy no longer overlaps.
 
 ## Backlog
 
@@ -198,6 +199,13 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - What changed: Intercepted same-page product hash links like `prod.html#sctitle`, reset the carousel's internal terminal-screen scroll whenever slides change, and cache-busted the updated carousel script.
 - Why it changed: Selecting SomaCloud from the Products dropdown activated the correct slide but also triggered native anchor scrolling inside the hidden terminal screen, pushing the SomaCloud content out of view.
 - Validation done: Ran JavaScript syntax checks, whitespace diff check, reproduced the hidden `screenScrollTop` issue, verified same-page `#eframe` to `#sctitle` transitions keep `screenScrollTop` at `0`, verified fresh cross-page loads into `prod.html#sctitle`, confirmed SomaCloud image/text render inside the terminal, and checked for website console errors.
+
+### 2026-07-22
+
+- Pages/files changed: `css/style.css`, `SPRINT.md`
+- What changed: Rebuilt the Home carousel slide spacing with grid-based layouts, kept the Home navbar links from wrapping at the preview width, moved the Eidolon-frame hero/text presentation higher, placed the first paragraph under the arm without clipping, separated the Somacloud and Eidolon slide text blocks, and centered the Home carousel arrow controls beside the dots.
+- Why it changed: The Home page carousel text was overlapping itself, the first slide paragraph was being cut off, and the visual controls were not sitting cleanly in the carousel rail.
+- Validation done: Ran whitespace diff checks and live browser previews for Home slide 1 and slide 2, confirming slide 1 has safe headline-to-paragraph spacing, the paragraph fits inside the viewport, slide 2 text blocks have a visible gap, and the navbar remains single-line at the app preview width.
 
 ## Change-log format for future updates
 
