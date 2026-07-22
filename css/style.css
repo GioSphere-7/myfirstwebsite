@@ -1059,6 +1059,153 @@ padding-top: 18vw;
     filter: sepia(0.15) saturate(0.85) hue-rotate(70deg) contrast(1.08);
 }
 
+.prodscroll .terminal-visual img.product-enlargeable-image {
+    cursor: zoom-in;
+    transition:
+        opacity 520ms ease,
+        transform 220ms ease,
+        filter 520ms ease,
+        clip-path 900ms steps(18, end),
+        box-shadow 220ms ease,
+        border-color 220ms ease;
+}
+
+.prodscroll .terminal-visual img.product-enlargeable-image:hover,
+.prodscroll .terminal-visual img.product-enlargeable-image:focus-visible {
+    border-color: rgba(243, 255, 248, 0.74);
+    box-shadow:
+        0 0 0 1px rgba(108, 255, 177, 0.48),
+        0 0 32px rgba(108, 255, 177, 0.3);
+    outline: 0;
+    transform: translateY(-2px) scale(1.01);
+}
+
+.product-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 6000;
+    display: grid;
+    place-items: center;
+    padding: clamp(16px, 4vw, 54px);
+    background:
+        radial-gradient(circle at center, rgba(5, 25, 20, 0.72), rgba(0, 0, 0, 0.92) 72%),
+        rgba(0, 0, 0, 0.88);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.product-lightbox.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.product-lightbox-panel {
+    position: relative;
+    box-sizing: border-box;
+    width: min(1120px, 94vw);
+    height: min(760px, 84vh);
+    padding: clamp(14px, 2.4vw, 28px);
+    border: 1px solid rgba(133, 255, 185, 0.42);
+    border-radius: 18px;
+    background:
+        linear-gradient(180deg, rgba(5, 25, 20, 0.88), rgba(2, 9, 14, 0.92)),
+        rgba(4, 25, 38, 0.86);
+    box-shadow:
+        0 0 0 1px rgba(98, 213, 234, 0.16),
+        0 0 48px rgba(67, 255, 167, 0.2),
+        inset 0 0 68px rgba(67, 255, 167, 0.08);
+}
+
+.product-lightbox-frame {
+    position: relative;
+    display: grid;
+    place-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(108, 255, 177, 0.035) 0,
+            rgba(108, 255, 177, 0.035) 1px,
+            transparent 2px,
+            transparent 5px
+        ),
+        rgba(0, 0, 0, 0.52);
+}
+
+.product-lightbox-media {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.product-lightbox-caption {
+    position: absolute;
+    right: clamp(14px, 2vw, 26px);
+    bottom: clamp(14px, 2vw, 26px);
+    left: clamp(14px, 2vw, 26px);
+    display: grid;
+    gap: 6px;
+    max-width: 680px;
+    padding: clamp(10px, 1.7vw, 16px);
+    border: 1px solid rgba(108, 255, 177, 0.38);
+    border-radius: 10px;
+    color: #c8f5d8;
+    background: rgba(2, 9, 14, 0.64);
+    box-shadow:
+        0 0 0 1px rgba(98, 213, 234, 0.1),
+        0 16px 34px rgba(0, 0, 0, 0.34),
+        inset 0 0 18px rgba(67, 255, 167, 0.055);
+    text-shadow: 0 0 10px rgba(108, 255, 177, 0.32);
+}
+
+@supports (backdrop-filter: blur(8px)) {
+    .product-lightbox-caption {
+        backdrop-filter: blur(8px);
+    }
+}
+
+.product-lightbox-caption strong {
+    color: #f3fff8;
+    font-family: "Orbitron", "Exo 2", Arial, sans-serif;
+    font-size: clamp(0.78rem, 1.3vw, 1.02rem);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.product-lightbox-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+    border: 1px solid rgba(108, 255, 177, 0.52);
+    border-radius: 999px;
+    padding: 8px 12px;
+    color: #03120f;
+    background:
+        linear-gradient(90deg, rgba(108, 255, 177, 0.96), rgba(98, 213, 234, 0.72)),
+        #6cffb1;
+    font-family: "Courier New", Consolas, monospace;
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.product-lightbox-close:hover,
+.product-lightbox-close:focus-visible {
+    outline: 0;
+    background: #f3fff8;
+    box-shadow: 0 0 18px rgba(108, 255, 177, 0.48);
+}
+
 @keyframes product-console-cursor {
     0%, 48% {
         opacity: 1;

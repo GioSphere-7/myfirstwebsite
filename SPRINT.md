@@ -49,6 +49,7 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Converted the Products page into a vertical terminal carousel with console-style text/image reveal effects.
 - Matched the Products carousel frame to the News & Events archive terminal size and casing for stronger page-to-page consistency.
 - Centered the Products carousel dots between the up/down arrows in a single right-side control rail.
+- Added click-to-enlarge behavior for Products page schematic and SomaCloud images.
 
 ## Backlog
 
@@ -174,6 +175,13 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - What changed: Moved the Products carousel dots into the same control rail as the arrows so the up arrow sits above the dot column and the down arrow sits below it.
 - Why it changed: The carousel controls needed to feel visually centered and intentional instead of having the arrow buttons and dots separated into two offset groups.
 - Validation done: Ran JavaScript syntax checks, whitespace diff check, HTML order check, and browser coordinate verification confirming the arrows and dots share the same center line with the dots bracketed between the buttons.
+
+### 2026-07-22
+
+- Pages/files changed: `prod.html`, `css/style.css`, `js/product-image-lightbox.js`, `SPRINT.md`
+- What changed: Added a product-image lightbox so users can click the Products page schematic and SomaCloud images to open a larger terminal-style viewer with a caption and Close control.
+- Why it changed: Product imagery needed to be easier to inspect without leaving the carousel or breaking the Products page terminal experience.
+- Validation done: Ran JavaScript syntax checks, whitespace diff check, verified all four product images are expandable/focusable, browser-tested opening and closing the active Eidolon image, confirmed the carousel stayed on `#eframe`, and checked for product-page console errors.
 
 ## Change-log format for future updates
 
