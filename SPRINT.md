@@ -51,6 +51,7 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Centered the Products carousel dots between the up/down arrows in a single right-side control rail.
 - Added click-to-enlarge behavior for Products page schematic and SomaCloud images.
 - Fixed Products carousel slide alignment so hash-loaded slides do not animate upward and top labels/headings remain immediately legible.
+- Fixed the Products dropdown SomaCloud link so it loads the SomaCloud carousel slide without hidden terminal-screen scrolling.
 
 ## Backlog
 
@@ -190,6 +191,13 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - What changed: Added safe vertical spacing to Products carousel slides, disabled the initial animated jump when opening hash links like `#eframe`, cache-busted the updated product scripts, and kept slide labels/headings fully visible instead of type-clipping them.
 - Why it changed: The Products carousel pages appeared pushed upward on load and the top product label/heading could look clipped or illegible while the carousel and typewriter effects initialized.
 - Validation done: Ran JavaScript syntax checks, whitespace diff check, short-viewport and normal-viewport browser checks, verified all eight slides have safe top spacing and zero overflow, tested next-slide navigation, tested product image enlargement, and confirmed no website console errors.
+
+### 2026-07-22
+
+- Pages/files changed: `prod.html`, `js/product-vertical-carousel.js`, `SPRINT.md`
+- What changed: Intercepted same-page product hash links like `prod.html#sctitle`, reset the carousel's internal terminal-screen scroll whenever slides change, and cache-busted the updated carousel script.
+- Why it changed: Selecting SomaCloud from the Products dropdown activated the correct slide but also triggered native anchor scrolling inside the hidden terminal screen, pushing the SomaCloud content out of view.
+- Validation done: Ran JavaScript syntax checks, whitespace diff check, reproduced the hidden `screenScrollTop` issue, verified same-page `#eframe` to `#sctitle` transitions keep `screenScrollTop` at `0`, verified fresh cross-page loads into `prod.html#sctitle`, confirmed SomaCloud image/text render inside the terminal, and checked for website console errors.
 
 ## Change-log format for future updates
 

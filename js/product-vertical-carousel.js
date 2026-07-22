@@ -11,6 +11,7 @@
   const nextButton = carousel.querySelector("[data-product-carousel-next]");
   const dotsContainer = carousel.querySelector("[data-product-carousel-dots]");
   const status = carousel.querySelector("[data-product-carousel-status]");
+  const carouselScreen = carousel.querySelector(".product-carousel-screen");
   const wheelCooldown = 640;
   let currentIndex = 0;
   let lastWheelTime = 0;
@@ -24,8 +25,8 @@
     return slide.dataset.slideLabel || slide.querySelector("h1, h2")?.textContent.trim() || `Slide ${index + 1}`;
   }
 
-  function getSlideIndexFromHash() {
-    const hash = window.location.hash.replace("#", "");
+  function getSlideIndexFromHash(hashValue = window.location.hash) {
+    const hash = hashValue.replace("#", "");
 
     if (!hash) {
       return 0;
@@ -38,6 +39,32 @@
     }
 
     return slides.findIndex((slide) => Boolean(slide.querySelector(`#${CSS.escape(hash)}`)));
+  }
+
+  function resetCarouselScroll() {
+    window.scrollTo(0, 0);
+
+    [
+      document.scrollingElement,
+      document.documentElement,
+      document.body,
+      carousel,
+      carouselScreen,
+      track
+    ].forEach((element) => {
+      if (!element) {
+        return;
+      }
+
+      element.scrollTop = 0;
+      element.scrollLeft = 0;
+    });
+  }
+
+  function scheduleCarouselScrollReset() {
+    resetCarouselScroll();
+    requestAnimationFrame(resetCarouselScroll);
+    window.setTimeout(resetCarouselScroll, 0);
   }
 
   function setHashForSlide(slide) {
@@ -88,6 +115,8 @@
       setHashForSlide(activeSlide);
     }
 
+    scheduleCarouselScrollReset();
+
     carousel.dispatchEvent(new CustomEvent("productSlideChange", {
       detail: {
         index: currentIndex,
@@ -132,6 +161,29 @@
 
     dotsContainer.appendChild(fragment);
   }
+
+  document.addEventListener("click", (event) => {
+    const link = event.target.closest("a[href]");
+
+    if (!link) {
+      return;
+    }
+
+    const url = new URL(link.href, window.location.href);
+
+    if (url.origin !== window.location.origin || url.pathname !== window.location.pathname || !url.hash) {
+      return;
+    }
+
+    const hashIndex = getSlideIndexFromHash(url.hash);
+
+    if (hashIndex < 0) {
+      return;
+    }
+
+    event.preventDefault();
+    updateCarousel(hashIndex, { immediate: true });
+  });
 
   previousButton.addEventListener("click", goPrevious);
   nextButton.addEventListener("click", goNext);
@@ -212,7 +264,10 @@
     const hashIndex = getSlideIndexFromHash();
 
     if (hashIndex >= 0 && hashIndex !== currentIndex) {
-      updateCarousel(hashIndex, { keepHash: true });
+      updateCarousel(hashIndex, {
+        immediate: true,
+        keepHash: true
+      });
     }
   });
 
