@@ -54,6 +54,7 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Fixed the Products dropdown SomaCloud link so it loads the SomaCloud carousel slide without hidden terminal-screen scrolling.
 - Fixed Home carousel text formatting so the first slide paragraph no longer clips and the Somacloud / Eidolon copy no longer overlaps.
 - Repositioned the Home Eidolon-frame hero so its arm separates the title from the paragraph and restyled the Home carousel controls to match the Products control rail.
+- Raised the Home first-slide Eidolon-frame and paragraph so the paragraph no longer cuts off on wide screens.
 
 ## Backlog
 
@@ -214,6 +215,13 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - What changed: Repositioned the Home Eidolon-frame image and first-slide text so the outstretched arm reads as the divider between the title and paragraph, converted the Home carousel controls into the same arrow/dot/arrow rail structure used by the Products carousel, restyled the Home arrows and dots with the Products terminal colors, and added spacing safeguards to the Products carousel control rail.
 - Why it changed: The Home hero arm was still visually colliding with the paragraph, and the carousel arrows/dots needed to look consistent and avoid overlap.
 - Validation done: Ran whitespace diff checks, verified the Home carousel markup uses one shared control rail, confirmed the local server returns `200`, and completed a live Home preview before the final paragraph nudge showing the Products-style rail with clean arrow-to-dot spacing.
+
+### 2026-07-22
+
+- Pages/files changed: `css/style.css`, `SPRINT.md`
+- What changed: Removed the extra downward paragraph offset from the Home first carousel slide, tightened the paragraph's responsive top margin, and shifted the Eidolon-frame image higher so the arm remains above the copy without pushing text below the viewport.
+- Why it changed: At the wider browser size shown in the latest screenshot, the first-slide paragraph was still getting cut off at the bottom.
+- Validation done: Ran live browser layout checks at the normal preview width and a temporary `1916x923` viewport matching the screenshot. The wide viewport now shows the paragraph fully inside the screen with `53px` bottom clearance, then the temporary viewport override was reset.
 
 ## Change-log format for future updates
 
