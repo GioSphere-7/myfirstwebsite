@@ -2,7 +2,7 @@
 
 This file is the working sprint tracker for the Soma Inc. website. Moving forward, update this list whenever the website changes so the project history, current focus, and next priorities stay easy to follow.
 
-Last updated: 2026-07-22
+Last updated: 2026-07-30
 
 ## Current sprint: Site polish and user-flow stability
 
@@ -17,7 +17,7 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 
 ### Next up
 
-- Review mobile responsiveness for all pages.
+- Continue mobile QA for edge cases on very small phones, tablets, and rotated screens.
 - Add clearer cart / purchase-history feedback after a user adds or removes an item.
 - Improve page-to-page consistency for headings, buttons, card spacing, and hover states.
 - Add a more polished empty-state message for purchase history.
@@ -55,6 +55,7 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Fixed Home carousel text formatting so the first slide paragraph no longer clips and the Somacloud / Eidolon copy no longer overlaps.
 - Repositioned the Home Eidolon-frame hero so its arm separates the title from the paragraph and restyled the Home carousel controls to match the Products control rail.
 - Raised the Home first-slide Eidolon-frame and paragraph so the paragraph no longer cuts off on wide screens.
+- Added device recognition and mobile-only responsive layouts for touch/small-screen devices while preserving the existing desktop view.
 
 ## Backlog
 
@@ -222,6 +223,13 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - What changed: Removed the extra downward paragraph offset from the Home first carousel slide, tightened the paragraph's responsive top margin, and shifted the Eidolon-frame image higher so the arm remains above the copy without pushing text below the viewport.
 - Why it changed: At the wider browser size shown in the latest screenshot, the first-slide paragraph was still getting cut off at the bottom.
 - Validation done: Ran live browser layout checks at the normal preview width and a temporary `1916x923` viewport matching the screenshot. The wide viewport now shows the paragraph fully inside the screen with `53px` bottom clearance, then the temporary viewport override was reset.
+
+### 2026-07-30
+
+- Pages/files changed: `index.html`, `events.html`, `prod.html`, `shop.html`, `account.html`, `purchase-history.html`, `css/style.css`, `js/device-recognition.js`, `SPRINT.md`
+- What changed: Added a shared device-recognition script that tags each page with viewport/input classes, then added a mobile-only responsive CSS layer for touch and small-screen devices. The mobile layer adapts the navbar, Home carousel, Products terminal carousel, News archive terminal, Shop grids, Account forms, and Purchase History panels without changing the desktop layout rules.
+- Why it changed: Mobile devices needed screen-size and input-type-aware layouts while keeping the existing computer browser view intact.
+- Validation done: Ran JavaScript syntax checks and whitespace diff checks. Captured local 390x844 mobile browser previews for Home, Products, News & Events, and Shop; those pages reported `mobile` viewport mode and no horizontal overflow. GitHub push is intentionally pending until preview approval.
 
 ## Change-log format for future updates
 
