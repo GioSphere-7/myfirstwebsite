@@ -41,12 +41,82 @@
       target.dataset.deviceViewport = profile.viewport;
       target.dataset.inputType = profile.input;
     });
+
+    if (profile.viewport === "desktop") {
+      closeMobileNavigation();
+    }
   }
 
+  function closeMobileNavigation() {
+    document.querySelectorAll(".navbar.mobile-menu-open").forEach((navbar) => {
+      const toggle = navbar.querySelector(".mobile-menu-toggle");
+
+      navbar.classList.remove("mobile-menu-open");
+      if (toggle) {
+        toggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
+  function initMobileNavigation() {
+    const navbar = document.querySelector(".navbar");
+    const navList = navbar?.querySelector(":scope > ul");
+    const navRight = navbar?.querySelector(".nav-right");
+
+    if (!navbar || !navList || navbar.dataset.mobileMenuReady === "true") {
+      return;
+    }
+
+    if (!navList.id) {
+      navList.id = "soma-mobile-menu";
+    }
+
+    const toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "mobile-menu-toggle";
+    toggle.setAttribute("aria-label", "Open navigation menu");
+    toggle.setAttribute("aria-controls", navList.id);
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.innerHTML = "<span></span><span></span><span></span>";
+
+    navbar.insertBefore(toggle, navRight || navList);
+    navbar.dataset.mobileMenuReady = "true";
+
+    toggle.addEventListener("click", () => {
+      const isOpen = navbar.classList.toggle("mobile-menu-open");
+
+      toggle.setAttribute("aria-expanded", String(isOpen));
+      toggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+    });
+
+    navList.addEventListener("click", (event) => {
+      if (event.target.closest("a")) {
+        closeMobileNavigation();
+      }
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!navbar.contains(event.target)) {
+        closeMobileNavigation();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeMobileNavigation();
+        toggle.focus();
+      }
+    });
+  }
+
+  initMobileNavigation();
   applyDeviceProfile();
 
   window.addEventListener("resize", applyDeviceProfile, { passive: true });
   window.addEventListener("orientationchange", applyDeviceProfile, { passive: true });
   window.addEventListener("pageshow", applyDeviceProfile);
-  document.addEventListener("DOMContentLoaded", applyDeviceProfile);
+  document.addEventListener("DOMContentLoaded", () => {
+    initMobileNavigation();
+    applyDeviceProfile();
+  });
 })();

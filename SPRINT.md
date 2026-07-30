@@ -56,6 +56,7 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Repositioned the Home Eidolon-frame hero so its arm separates the title from the paragraph and restyled the Home carousel controls to match the Products control rail.
 - Raised the Home first-slide Eidolon-frame and paragraph so the paragraph no longer cuts off on wide screens.
 - Added device recognition and mobile-only responsive layouts for touch/small-screen devices while preserving the existing desktop view.
+- Reworked the mobile navigation bar into a compact logo/search/cart/account row with hamburger access to the full nav menu.
 
 ## Backlog
 
@@ -230,6 +231,13 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - What changed: Added a shared device-recognition script that tags each page with viewport/input classes, then added a mobile-only responsive CSS layer for touch and small-screen devices. The mobile layer adapts the navbar, Home carousel, Products terminal carousel, News archive terminal, Shop grids, Account forms, and Purchase History panels without changing the desktop layout rules.
 - Why it changed: Mobile devices needed screen-size and input-type-aware layouts while keeping the existing computer browser view intact.
 - Validation done: Ran JavaScript syntax checks and whitespace diff checks. Captured local 390x844 mobile browser previews for Home, Products, News & Events, and Shop; those pages reported `mobile` viewport mode and no horizontal overflow. GitHub push is intentionally pending until preview approval.
+
+### 2026-07-30
+
+- Pages/files changed: `css/style.css`, `js/device-recognition.js`, `SPRINT.md`
+- What changed: Replaced the two-row mobile navbar with a compact one-row mobile control bar showing only the Soma logo, hamburger, search, purchase history, and account icons. The hamburger opens a terminal-style menu containing the existing News & Events, Products, Shop, and dropdown category links.
+- Why it changed: The mobile navbar was taking up too much vertical screen space when scrolling and needed to keep primary actions visible while moving secondary navigation behind a menu.
+- Validation done: Ran JavaScript syntax checks, whitespace diff checks, captured mobile closed/open menu previews at `390x844`, and smoke-tested all six main pages at `390x844` and `320x740` with a `70px` closed navbar and no horizontal overflow.
 
 ## Change-log format for future updates
 
