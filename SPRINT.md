@@ -58,6 +58,7 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Added device recognition and mobile-only responsive layouts for touch/small-screen devices while preserving the existing desktop view.
 - Reworked the mobile navigation bar into a compact logo/search/cart/account row with hamburger access to the full nav menu.
 - Made the mobile hamburger menu permanent in the HTML and cache-busted the nav CSS/JS so it appears reliably on deployed pages.
+- Moved the mobile hamburger button to the far right of the navbar after search, cart, and account.
 
 ## Backlog
 
@@ -246,6 +247,13 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - What changed: Added the mobile hamburger button directly into every page's navbar HTML, assigned the shared menu list an explicit `soma-mobile-menu` ID, updated the device script to wire up an existing button instead of relying only on JavaScript injection, and cache-busted the mobile nav CSS/JS links with `mobile-menu-2`.
 - Why it changed: The hamburger menu needed to appear reliably on mobile/deployed pages and clearly contain News & Events, Products, and Shop.
 - Validation done: Ran JavaScript syntax checks, whitespace diff checks, captured local mobile closed/open previews showing the hamburger and terminal menu, and verified all six main pages render exactly one mobile hamburger with News & Events, Products, and Shop in the menu.
+
+### 2026-07-30
+
+- Pages/files changed: `index.html`, `events.html`, `prod.html`, `shop.html`, `account.html`, `purchase-history.html`, `css/style.css`, `SPRINT.md`
+- What changed: Reordered the mobile navbar so the hamburger button sits at the far right after the search, purchase-history, and account controls. Bumped the stylesheet cache tag to `mobile-menu-3`.
+- Why it changed: The hamburger needed to sit flush at the right edge of the mobile navigation bar instead of between the logo and search.
+- Validation done: Ran JavaScript syntax checks, whitespace diff checks, and local mobile previews at `390x844` and `320x740`; all six main pages kept a `70px` navbar, had no horizontal overflow, and placed the hamburger as the rightmost nav control.
 
 ## Change-log format for future updates
 

@@ -3108,7 +3108,7 @@ body.events {
     }
 
     .mobile-menu-toggle {
-        order: 2;
+        order: 4;
         display: inline-flex;
         flex: 0 0 42px;
         width: 42px;
@@ -3174,7 +3174,7 @@ body.events {
     }
 
     .nav-right {
-        order: 3;
+        order: 2;
         flex: 1 1 auto;
         justify-content: flex-end;
         gap: 8px;
