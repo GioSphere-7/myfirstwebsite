@@ -57,6 +57,7 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Raised the Home first-slide Eidolon-frame and paragraph so the paragraph no longer cuts off on wide screens.
 - Added device recognition and mobile-only responsive layouts for touch/small-screen devices while preserving the existing desktop view.
 - Reworked the mobile navigation bar into a compact logo/search/cart/account row with hamburger access to the full nav menu.
+- Made the mobile hamburger menu permanent in the HTML and cache-busted the nav CSS/JS so it appears reliably on deployed pages.
 
 ## Backlog
 
@@ -238,6 +239,13 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - What changed: Replaced the two-row mobile navbar with a compact one-row mobile control bar showing only the Soma logo, hamburger, search, purchase history, and account icons. The hamburger opens a terminal-style menu containing the existing News & Events, Products, Shop, and dropdown category links.
 - Why it changed: The mobile navbar was taking up too much vertical screen space when scrolling and needed to keep primary actions visible while moving secondary navigation behind a menu.
 - Validation done: Ran JavaScript syntax checks, whitespace diff checks, captured mobile closed/open menu previews at `390x844`, and smoke-tested all six main pages at `390x844` and `320x740` with a `70px` closed navbar and no horizontal overflow.
+
+### 2026-07-30
+
+- Pages/files changed: `index.html`, `events.html`, `prod.html`, `shop.html`, `account.html`, `purchase-history.html`, `js/device-recognition.js`, `SPRINT.md`
+- What changed: Added the mobile hamburger button directly into every page's navbar HTML, assigned the shared menu list an explicit `soma-mobile-menu` ID, updated the device script to wire up an existing button instead of relying only on JavaScript injection, and cache-busted the mobile nav CSS/JS links with `mobile-menu-2`.
+- Why it changed: The hamburger menu needed to appear reliably on mobile/deployed pages and clearly contain News & Events, Products, and Shop.
+- Validation done: Ran JavaScript syntax checks, whitespace diff checks, captured local mobile closed/open previews showing the hamburger and terminal menu, and verified all six main pages render exactly one mobile hamburger with News & Events, Products, and Shop in the menu.
 
 ## Change-log format for future updates
 

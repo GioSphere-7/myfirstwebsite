@@ -71,15 +71,19 @@
       navList.id = "soma-mobile-menu";
     }
 
-    const toggle = document.createElement("button");
+    let toggle = navbar.querySelector(".mobile-menu-toggle");
+
+    if (!toggle) {
+      toggle = document.createElement("button");
+      toggle.innerHTML = "<span></span><span></span><span></span>";
+      navbar.insertBefore(toggle, navRight || navList);
+    }
+
     toggle.type = "button";
-    toggle.className = "mobile-menu-toggle";
+    toggle.classList.add("mobile-menu-toggle");
     toggle.setAttribute("aria-label", "Open navigation menu");
     toggle.setAttribute("aria-controls", navList.id);
     toggle.setAttribute("aria-expanded", "false");
-    toggle.innerHTML = "<span></span><span></span><span></span>";
-
-    navbar.insertBefore(toggle, navRight || navList);
     navbar.dataset.mobileMenuReady = "true";
 
     toggle.addEventListener("click", () => {
