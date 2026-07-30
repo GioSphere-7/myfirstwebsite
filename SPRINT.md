@@ -60,6 +60,7 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Made the mobile hamburger menu permanent in the HTML and cache-busted the nav CSS/JS so it appears reliably on deployed pages.
 - Moved the mobile hamburger button to the far right of the navbar after search, cart, and account.
 - Reordered the hamburger source markup after the mobile icon group and bumped nav assets to `mobile-menu-4` so the Home page cannot fall back to the old hamburger position.
+- Restyled the shared navigation bar to match the archive terminal's dark teal, mint-glow visual system.
 
 ## Backlog
 
@@ -262,6 +263,13 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - What changed: Moved the hamburger button markup after the search/cart/account group in every navbar and bumped both the stylesheet and device-recognition script references to `mobile-menu-4`.
 - Why it changed: The Home page could still appear to use the old hamburger placement if a cached script or source order was being reused.
 - Validation done: Ran JavaScript syntax checks, whitespace diff checks, captured a local Home mobile preview showing the hamburger at the far right, and verified all six main pages at `390x844` and `320x740` load `mobile-menu-4`, keep the hamburger after the icons, maintain a `70px` nav height, and avoid horizontal overflow.
+
+### 2026-07-30
+
+- Pages/files changed: `index.html`, `events.html`, `prod.html`, `shop.html`, `account.html`, `purchase-history.html`, `css/style.css`, `SPRINT.md`
+- What changed: Restyled the shared navbar, dropdown menus, search field, status popover, logo/icon glow, and mobile hamburger/menu panel with the archive terminal palette: dark teal/black glass, mint borders, cyan highlights, scanline texture, and terminal-style glow. Bumped the shared stylesheet reference to `archive-nav-1`.
+- Why it changed: The navigation bar needed to share the same color and visual aesthetic as the News & Events archive terminal.
+- Validation done: Ran JavaScript syntax checks, whitespace diff checks, desktop navbar render verification, and mobile checks across all six main pages. Confirmed the hamburger remains right-aligned, the mobile menu opens with News & Events, Products, and Shop, and the navbar/menu use the archive terminal colors without horizontal overflow.
 
 ## Change-log format for future updates
 
