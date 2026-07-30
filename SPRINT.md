@@ -59,6 +59,7 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Reworked the mobile navigation bar into a compact logo/search/cart/account row with hamburger access to the full nav menu.
 - Made the mobile hamburger menu permanent in the HTML and cache-busted the nav CSS/JS so it appears reliably on deployed pages.
 - Moved the mobile hamburger button to the far right of the navbar after search, cart, and account.
+- Reordered the hamburger source markup after the mobile icon group and bumped nav assets to `mobile-menu-4` so the Home page cannot fall back to the old hamburger position.
 
 ## Backlog
 
@@ -254,6 +255,13 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - What changed: Reordered the mobile navbar so the hamburger button sits at the far right after the search, purchase-history, and account controls. Bumped the stylesheet cache tag to `mobile-menu-3`.
 - Why it changed: The hamburger needed to sit flush at the right edge of the mobile navigation bar instead of between the logo and search.
 - Validation done: Ran JavaScript syntax checks, whitespace diff checks, and local mobile previews at `390x844` and `320x740`; all six main pages kept a `70px` navbar, had no horizontal overflow, and placed the hamburger as the rightmost nav control.
+
+### 2026-07-30
+
+- Pages/files changed: `index.html`, `events.html`, `prod.html`, `shop.html`, `account.html`, `purchase-history.html`, `SPRINT.md`
+- What changed: Moved the hamburger button markup after the search/cart/account group in every navbar and bumped both the stylesheet and device-recognition script references to `mobile-menu-4`.
+- Why it changed: The Home page could still appear to use the old hamburger placement if a cached script or source order was being reused.
+- Validation done: Ran JavaScript syntax checks, whitespace diff checks, captured a local Home mobile preview showing the hamburger at the far right, and verified all six main pages at `390x844` and `320x740` load `mobile-menu-4`, keep the hamburger after the icons, maintain a `70px` nav height, and avoid horizontal overflow.
 
 ## Change-log format for future updates
 
