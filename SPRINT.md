@@ -62,6 +62,7 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Reordered the hamburger source markup after the mobile icon group and bumped nav assets to `mobile-menu-4` so the Home page cannot fall back to the old hamburger position.
 - Restyled the shared navigation bar to match the archive terminal's dark teal, mint-glow visual system.
 - Enlarged and shifted the Home page second-slide SomaCloud image closer to the text.
+- Doubled the Home page second-slide SomaCloud image while preserving its current distance from the text.
 
 ## Backlog
 
@@ -278,6 +279,13 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - What changed: Enlarged the Home page second-slide SomaCloud image, shifted its image stage left closer to the text panels, increased its height cap, and bumped the shared stylesheet reference to `home-slide2-1`.
 - Why it changed: The second Home carousel slide needed the photo to feel bigger and more connected to the surrounding text.
 - Validation done: Ran desktop Home slide 2 browser preview, mobile `390x844` sanity check, JavaScript syntax check, and whitespace diff check. Confirmed the larger/left-shifted image stays behind the text, the page has no horizontal overflow, and the mobile navbar remains 70px tall with the hamburger right-aligned.
+
+### 2026-08-04
+
+- Pages/files changed: `index.html`, `events.html`, `prod.html`, `shop.html`, `account.html`, `purchase-history.html`, `css/style.css`, `SPRINT.md`
+- What changed: Doubled the Home page second-slide SomaCloud image scale, changed the image stage to anchor from the left edge, and bumped the shared stylesheet reference to `home-slide2-2`.
+- Why it changed: The SomaCloud photo needed to become about two times larger while keeping the same distance from the text that the previous version had.
+- Validation done: Ran desktop Home slide 2 browser preview, JavaScript syntax check, and whitespace diff check. Confirmed the image left edge stayed at the previous preview position, the image height doubled, the visible photo is much larger, and the page has no horizontal overflow.
 
 ## Change-log format for future updates
 
