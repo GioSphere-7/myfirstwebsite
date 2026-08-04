@@ -510,7 +510,7 @@
 
 .somacloud{
     position: absolute;
-    inset: 0 0 0 28.5%;
+    inset: 0 0 0 25%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -521,9 +521,9 @@
 }
 
 .somacloud img {
-    width: min(172vw, 3160px);
+    width: min(190vw, 3480px);
     max-width: none;
-    max-height: min(176vh, 1680px);
+    max-height: min(190vh, 1820px);
     object-fit: contain;
     transform: none;
     transform-origin: left center;

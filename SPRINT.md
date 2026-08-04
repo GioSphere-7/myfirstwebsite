@@ -63,6 +63,7 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Restyled the shared navigation bar to match the archive terminal's dark teal, mint-glow visual system.
 - Enlarged and shifted the Home page second-slide SomaCloud image closer to the text.
 - Doubled the Home page second-slide SomaCloud image while preserving its current distance from the text.
+- Enlarged the desktop Home page second-slide SomaCloud photo again and moved it slightly closer to the text.
 
 ## Backlog
 
@@ -286,6 +287,13 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - What changed: Doubled the Home page second-slide SomaCloud image scale, changed the image stage to anchor from the left edge, and bumped the shared stylesheet reference to `home-slide2-2`.
 - Why it changed: The SomaCloud photo needed to become about two times larger while keeping the same distance from the text that the previous version had.
 - Validation done: Ran desktop Home slide 2 browser preview, JavaScript syntax check, and whitespace diff check. Confirmed the image left edge stayed at the previous preview position, the image height doubled, the visible photo is much larger, and the page has no horizontal overflow.
+
+### 2026-08-04
+
+- Pages/files changed: `index.html`, `events.html`, `prod.html`, `shop.html`, `account.html`, `purchase-history.html`, `css/style.css`, `SPRINT.md`
+- What changed: Increased the desktop Home page second-slide SomaCloud image size again, moved the image stage left from `28.5%` to `25%`, increased the desktop image width/height caps, and bumped the shared stylesheet reference to `home-slide2-3`.
+- Why it changed: The desktop second-slide photo needed to be bigger and sit a little closer to the text after returning focus to the computer browser view.
+- Validation done: Ran desktop Home slide 2 browser preview, JavaScript syntax check, and whitespace diff check. Confirmed the image moved about `45px` farther left toward the text, grew larger, stayed behind the copy, and introduced no horizontal overflow.
 
 ## Change-log format for future updates
 
