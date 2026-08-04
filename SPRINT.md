@@ -65,6 +65,7 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Doubled the Home page second-slide SomaCloud image while preserving its current distance from the text.
 - Enlarged the desktop Home page second-slide SomaCloud photo again and moved it slightly closer to the text.
 - Doubled the current desktop Home page second-slide SomaCloud photo scale while keeping its latest text distance.
+- Reduced the current desktop Home page second-slide SomaCloud photo by `1.5x` while keeping its latest text distance.
 
 ## Backlog
 
@@ -302,6 +303,13 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - What changed: Doubled the current desktop Home page second-slide SomaCloud image width and height caps again while keeping the `25%` left image-stage anchor, then bumped the shared stylesheet reference to `home-slide2-4`.
 - Why it changed: The desktop photo needed to become about two times larger from its current placement without changing its latest distance from the text.
 - Validation done: Ran desktop Home slide 2 browser preview, JavaScript syntax check, and whitespace diff check. Confirmed the image left edge stayed at the current `25%` anchor, the rendered image grew about `1.86x` in width and height, and the page introduced no horizontal overflow.
+
+### 2026-08-04
+
+- Pages/files changed: `index.html`, `events.html`, `prod.html`, `shop.html`, `account.html`, `purchase-history.html`, `css/style.css`, `SPRINT.md`
+- What changed: Reduced the current desktop Home page second-slide SomaCloud image width and height caps by about `1.5x` while preserving the `25%` left image-stage anchor, then bumped the shared stylesheet reference to `home-slide2-5`.
+- Why it changed: The current SomaCloud photo had become too large and needed to be scaled down without changing its distance from the text.
+- Validation done: Ran desktop Home slide 2 browser preview, JavaScript syntax check, and whitespace diff check. Confirmed the image stayed at the same left anchor, rendered at about `0.66x` of the previous size, stayed behind the copy, and introduced no horizontal overflow.
 
 ## Change-log format for future updates
 

@@ -521,9 +521,9 @@
 }
 
 .somacloud img {
-    width: min(380vw, 6960px);
+    width: min(234.5vw, 4296px);
     max-width: none;
-    max-height: min(380vh, 3640px);
+    max-height: min(234.5vh, 2247px);
     object-fit: contain;
     transform: none;
     transform-origin: left center;
