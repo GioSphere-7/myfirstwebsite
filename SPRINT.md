@@ -2,7 +2,7 @@
 
 This file is the working sprint tracker for the Soma Inc. website. Moving forward, update this list whenever the website changes so the project history, current focus, and next priorities stay easy to follow.
 
-Last updated: 2026-07-30
+Last updated: 2026-08-04
 
 ## Current sprint: Site polish and user-flow stability
 
@@ -61,6 +61,7 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Moved the mobile hamburger button to the far right of the navbar after search, cart, and account.
 - Reordered the hamburger source markup after the mobile icon group and bumped nav assets to `mobile-menu-4` so the Home page cannot fall back to the old hamburger position.
 - Restyled the shared navigation bar to match the archive terminal's dark teal, mint-glow visual system.
+- Enlarged and shifted the Home page second-slide SomaCloud image closer to the text.
 
 ## Backlog
 
@@ -270,6 +271,13 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - What changed: Restyled the shared navbar, dropdown menus, search field, status popover, logo/icon glow, and mobile hamburger/menu panel with the archive terminal palette: dark teal/black glass, mint borders, cyan highlights, scanline texture, and terminal-style glow. Bumped the shared stylesheet reference to `archive-nav-1`.
 - Why it changed: The navigation bar needed to share the same color and visual aesthetic as the News & Events archive terminal.
 - Validation done: Ran JavaScript syntax checks, whitespace diff checks, desktop navbar render verification, and mobile checks across all six main pages. Confirmed the hamburger remains right-aligned, the mobile menu opens with News & Events, Products, and Shop, and the navbar/menu use the archive terminal colors without horizontal overflow.
+
+### 2026-08-04
+
+- Pages/files changed: `index.html`, `events.html`, `prod.html`, `shop.html`, `account.html`, `purchase-history.html`, `css/style.css`, `SPRINT.md`
+- What changed: Enlarged the Home page second-slide SomaCloud image, shifted its image stage left closer to the text panels, increased its height cap, and bumped the shared stylesheet reference to `home-slide2-1`.
+- Why it changed: The second Home carousel slide needed the photo to feel bigger and more connected to the surrounding text.
+- Validation done: Ran desktop Home slide 2 browser preview, mobile `390x844` sanity check, JavaScript syntax check, and whitespace diff check. Confirmed the larger/left-shifted image stays behind the text, the page has no horizontal overflow, and the mobile navbar remains 70px tall with the hamburger right-aligned.
 
 ## Change-log format for future updates
 
