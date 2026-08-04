@@ -64,6 +64,7 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Enlarged and shifted the Home page second-slide SomaCloud image closer to the text.
 - Doubled the Home page second-slide SomaCloud image while preserving its current distance from the text.
 - Enlarged the desktop Home page second-slide SomaCloud photo again and moved it slightly closer to the text.
+- Doubled the current desktop Home page second-slide SomaCloud photo scale while keeping its latest text distance.
 
 ## Backlog
 
@@ -294,6 +295,13 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - What changed: Increased the desktop Home page second-slide SomaCloud image size again, moved the image stage left from `28.5%` to `25%`, increased the desktop image width/height caps, and bumped the shared stylesheet reference to `home-slide2-3`.
 - Why it changed: The desktop second-slide photo needed to be bigger and sit a little closer to the text after returning focus to the computer browser view.
 - Validation done: Ran desktop Home slide 2 browser preview, JavaScript syntax check, and whitespace diff check. Confirmed the image moved about `45px` farther left toward the text, grew larger, stayed behind the copy, and introduced no horizontal overflow.
+
+### 2026-08-04
+
+- Pages/files changed: `index.html`, `events.html`, `prod.html`, `shop.html`, `account.html`, `purchase-history.html`, `css/style.css`, `SPRINT.md`
+- What changed: Doubled the current desktop Home page second-slide SomaCloud image width and height caps again while keeping the `25%` left image-stage anchor, then bumped the shared stylesheet reference to `home-slide2-4`.
+- Why it changed: The desktop photo needed to become about two times larger from its current placement without changing its latest distance from the text.
+- Validation done: Ran desktop Home slide 2 browser preview, JavaScript syntax check, and whitespace diff check. Confirmed the image left edge stayed at the current `25%` anchor, the rendered image grew about `1.86x` in width and height, and the page introduced no horizontal overflow.
 
 ## Change-log format for future updates
 
