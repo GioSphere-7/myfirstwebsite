@@ -2,7 +2,7 @@
 
 This file is the working sprint tracker for the Soma Inc. website. Moving forward, update this list whenever the website changes so the project history, current focus, and next priorities stay easy to follow.
 
-Last updated: 2026-08-18
+Last updated: 2026-08-19
 
 ## Current sprint: Site polish and user-flow stability
 
@@ -68,6 +68,7 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - Reduced the current desktop Home page second-slide SomaCloud photo by `1.5x` while keeping its latest text distance.
 - Reduced the desktop Home page second-slide SomaCloud photo by `2x` and moved it slightly closer to the text.
 - Nudged the Home second-slide SomaCloud foreground image slightly left and down to better overlap the matching grey server-room detail in the homepage background.
+- Nudged the Home second-slide SomaCloud foreground image slightly right after the overlap pass.
 
 ## Backlog
 
@@ -326,6 +327,13 @@ Goal: keep the site feeling futuristic, readable, and coherent while making the 
 - What changed: Restored the Home first-slide Eidolon-frame position, moved the Home second-slide SomaCloud foreground image slightly left and down, and bumped the shared stylesheet reference to `home-slide2-align-1`.
 - Why it changed: The alignment request was intended for the second Home carousel slide so the sharper SomaCloud photo overlaps the matching grey server-room detail in the homepage background.
 - Validation done: Captured desktop Home slide 2 previews at `1280x720` and `1920x1080`, checked that there was no horizontal overflow, ran JavaScript syntax checks for the site scripts, and ran `git diff --check`.
+
+### 2026-08-19
+
+- Pages/files changed: `index.html`, `events.html`, `prod.html`, `shop.html`, `account.html`, `purchase-history.html`, `css/style.css`, `SPRINT.md`
+- What changed: Moved the Home second-slide SomaCloud foreground image slightly right by shifting its desktop image-stage anchor from `20%` to `22%`, then bumped the shared stylesheet reference to `home-slide2-align-2`.
+- Why it changed: The second Home carousel slide photo needed to sit a little farther right after the previous overlap/alignment pass.
+- Validation done: Captured desktop Home slide 2 previews, checked that the page kept zero horizontal overflow, ran JavaScript syntax checks for the site scripts, and ran `git diff --check`.
 
 ## Change-log format for future updates
 
